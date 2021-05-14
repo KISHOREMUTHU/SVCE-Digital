@@ -106,7 +106,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/am.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -146,7 +146,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/ap.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -186,7 +186,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/auto.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -226,7 +226,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/biotech.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -252,7 +252,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/chemical-engineering",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -266,7 +266,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/chem.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -292,7 +292,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/civil-engineering",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -306,7 +306,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/civil.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -332,7 +332,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/computer-science-and-engineering",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -346,7 +346,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/cs.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -372,7 +372,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/electrical-and-electronics-engineering",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -386,7 +386,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/eee.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -412,7 +412,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/electronics-and-communication-engineering",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -426,7 +426,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/ece.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -452,7 +452,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/humanities-and-social-sciences",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -466,7 +466,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/hss.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -492,7 +492,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/information-technology",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -506,7 +506,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/it.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -532,7 +532,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/marine-engineering",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -546,7 +546,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/mar.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -572,7 +572,7 @@ class _AcademicsState extends State<Academics> {
                                     size: Size(100, 1000),
                                     child: WebView(
                                       initialUrl:
-                                          "https://www.svce.ac.in/departments/biotechnology/",
+                                          "https://www.svce.ac.in/departments/mechanical-engineering",
                                       javascriptMode:
                                           JavascriptMode.unrestricted,
                                     ),
@@ -586,7 +586,7 @@ class _AcademicsState extends State<Academics> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/ac.jpeg'),
+                            image: AssetImage('assets/mech.jpeg'),
                           ),
                           boxShadow: [
                             BoxShadow(
