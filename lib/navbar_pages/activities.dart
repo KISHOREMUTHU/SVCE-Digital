@@ -1,4 +1,6 @@
 import 'package:ease_the_error/activities/academics.dart';
+import 'package:ease_the_error/activities/canteen.dart';
+import 'package:ease_the_error/activities/library.dart';
 import 'package:ease_the_error/activities/placements.dart';
 import 'package:ease_the_error/navbar_pages/home.dart';
 import 'package:flutter/cupertino.dart';
@@ -118,34 +120,68 @@ class _ActivitiesState extends State<Activities> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 130,
-                        height: 130,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 1,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Canteen()));
+                            },
+                            child: Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/canteen.jpeg'),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
                           ),
-                          image: DecorationImage(
-                            image: AssetImage('assets/library.jpeg'),
+                          SizedBox(
+                            height: 8,
                           ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
+                          Text(' Canteen '),
+                        ],
                       ),
                       SizedBox(width: 40),
-                      Container(
-                        width: 130,
-                        height: 130,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 1,
+                      Column(
+                        children: [
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Library()));
+                            },
+                            child: Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/library.jpeg'),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
                           ),
-                          image: DecorationImage(
-                            image: AssetImage('assets/library.jpeg'),
+                          SizedBox(
+                            height: 8,
                           ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
+                          Text(' Library '),
+                        ],
                       ),
                     ],
                   ),
