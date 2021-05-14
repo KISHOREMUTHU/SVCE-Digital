@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "278775895214",
+    "project_id": "ease-the-error",
+    "storage_bucket": "ease-the-error.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278775895214:android:0e6fb0b8c13842454a893f",
+        "android_client_info": {
+          "package_name": "com.example.ease_the_error"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278775895214-6gd6p8rk97lqjkd44fhdje28a1hfg4i4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ease_the_error",
+            "certificate_hash": "a916266547e21572775ff1ec0ad1f6aef2443d7e"
+          }
+        },
+        {
+          "client_id": "278775895214-ot0ue87vq6lee5gvjirlnt5tj2brgahm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApn7i5J9pJKLPm7amD-J2dg0BBpSOkAeg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278775895214-ot0ue87vq6lee5gvjirlnt5tj2brgahm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
