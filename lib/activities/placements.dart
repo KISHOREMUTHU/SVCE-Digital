@@ -2,6 +2,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:ease_the_error/placement/preparation.dart';
 import 'package:ease_the_error/placement/top_companies.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Placements extends StatefulWidget {
   @override
@@ -754,6 +755,46 @@ class _PlacementsState extends State<Placements> {
                       child: Center(
                         child: Text(
                           'Placement Preparation',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 25),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SizedBox.fromSize(
+                                    size: Size(100, 1000),
+                                    child: WebView(
+                                      initialUrl:
+                                          "https://www.svce.ac.in/placement/",
+                                      javascriptMode:
+                                          JavascriptMode.unrestricted,
+                                    ),
+                                  )));
+                    },
+                    child: Container(
+                      width: 340,
+                      height: 70,
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(70)),
+                      child: Center(
+                        child: Text(
+                          'For More Information',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

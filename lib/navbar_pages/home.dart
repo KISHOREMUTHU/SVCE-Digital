@@ -1,9 +1,8 @@
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:ease_the_error/google_sign_in.dart';
+//import 'package:ease_the_error/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Home extends StatefulWidget {
@@ -158,11 +157,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             InkWell(
-              onTap: () {
-                final provider =
-                    Provider.of<GoogleSignInProvider>(context, listen: false);
-                provider.logout();
-              },
+              onTap: () {},
               child: ListTile(
                 title: Text('Logout'),
                 leading: Icon(

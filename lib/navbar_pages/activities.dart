@@ -1,10 +1,11 @@
 import 'package:ease_the_error/activities/academics.dart';
 import 'package:ease_the_error/activities/canteen.dart';
+import 'package:ease_the_error/activities/dispensary.dart';
 import 'package:ease_the_error/activities/library.dart';
 import 'package:ease_the_error/activities/placements.dart';
-import 'package:ease_the_error/navbar_pages/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Activities extends StatefulWidget {
   @override
@@ -196,82 +197,76 @@ class _ActivitiesState extends State<Activities> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 130,
-                        height: 130,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 1,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SizedBox.fromSize(
+                                            size: Size(100, 1000),
+                                            child: WebView(
+                                              initialUrl:
+                                                  "https://www.svce.ac.in/facilities/sports/home/",
+                                              javascriptMode:
+                                                  JavascriptMode.unrestricted,
+                                            ),
+                                          )));
+                            },
+                            child: Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/sports.jpeg'),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
                           ),
-                          image: DecorationImage(
-                            image: AssetImage('assets/library.jpeg'),
+                          SizedBox(
+                            height: 8,
                           ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
+                          Text(' Sports '),
+                        ],
                       ),
                       SizedBox(width: 40),
-                      Container(
-                        width: 130,
-                        height: 130,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 1,
-                          ),
-                          image: DecorationImage(
-                            image: AssetImage('assets/library.jpeg'),
-                          ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 40),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Home()));
-                        },
-                        child: Container(
-                          width: 130,
-                          height: 130,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 1,
+                      Column(
+                        children: [
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Dispensary()));
+                            },
+                            child: Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/dispensary.jpeg'),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
                             ),
-                            image: DecorationImage(
-                              image: AssetImage('assets/library.jpeg'),
-                            ),
-                            borderRadius: BorderRadius.circular(15),
                           ),
-                        ),
-                      ),
-                      SizedBox(width: 40),
-                      Container(
-                        width: 130,
-                        height: 130,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 1,
+                          SizedBox(
+                            height: 8,
                           ),
-                          image: DecorationImage(
-                            image: AssetImage('assets/library.jpeg'),
-                          ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
+                          Text(' Dispensary '),
+                        ],
                       ),
                     ],
                   ),
