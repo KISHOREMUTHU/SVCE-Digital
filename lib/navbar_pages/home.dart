@@ -1,4 +1,6 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:ease_the_error/chatbot/start.dart';
+import 'package:ease_the_error/doubt_app/board.dart';
 import 'package:ease_the_error/google_sign_in.dart';
 //import 'package:ease_the_error/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -154,23 +156,47 @@ class _HomeState extends State<Home> {
               child: ListTile(
                 title: Text('Events'),
                 leading: Icon(
-                  Icons.person,
+                  Icons.control_point,
                   color: Colors.grey,
                 ),
+                trailing: Icon(Icons.arrow_right, size: 32),
               ),
             ),
-            SizedBox(height: 5),
+            // SizedBox(height: 5),
+            Divider(),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyHomePage()));
+              },
               child: ListTile(
                 title: Text('Ask Veronica'),
                 leading: Icon(
                   Icons.person,
                   color: Colors.grey,
                 ),
+                trailing: Icon(Icons.arrow_right, size: 32),
               ),
             ),
-            SizedBox(height: 5),
+            // SizedBox(height: 5),
+            Divider(),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => BoardApp()));
+              },
+              child: ListTile(
+                title: Text('Sticky Notes'),
+                leading: Icon(
+                  Icons.notes,
+                  color: Colors.grey,
+                ),
+                trailing: Icon(Icons.arrow_right, size: 32),
+              ),
+            ),
+            //  SizedBox(height: 5),
+            Divider(),
+            SizedBox(height: 30),
             InkWell(
               onTap: () {
                 final provider =

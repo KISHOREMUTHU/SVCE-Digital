@@ -20,71 +20,79 @@ class _SignInWidgetState extends State<SignInWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 30),
-            Container(
-              alignment: Alignment.center,
-              height: 240,
-              child: Image.asset(
-                'assets/login.png',
+        child: Container(
+          //   constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/bg.png'),
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 30),
+              Container(
+                alignment: Alignment.center,
+                height: 240,
+                child: Image.asset(
+                  'assets/login.png',
 
-                // width: size.width * 0.5,
-                //  height: size.width * 0.5,
+                  // width: size.width * 0.5,
+                  //  height: size.width * 0.5,
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Welcome To SVCE Mobile !!!',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 26,
+              SizedBox(height: 10),
+              Text(
+                'Welcome To SVCE Mobile !!!',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 26,
+                ),
               ),
-            ),
-            SizedBox(height: 15),
-            Text(
-              'Sign In To Enter our App',
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 20,
-                // fontWeight : FontWeight.bold,
+              SizedBox(height: 15),
+              Text(
+                'Sign In To Enter our App',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 20,
+                  // fontWeight : FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Container(
-              alignment: Alignment.center,
-              height: 240,
-              child: CircleAvatar(
-                radius: 100,
-                backgroundColor: Colors.white,
-                backgroundImage: AssetImage('assets/svce.png'),
+              SizedBox(height: 10),
+              Container(
+                alignment: Alignment.center,
+                height: 240,
+                child: CircleAvatar(
+                  radius: 100,
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('assets/svce.png'),
+                ),
               ),
-            ),
 
-            //  Divider(),
-            //Spacer(),
-            SizedBox(height: 15),
-            Text(
-              'Connect Using',
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+              //  Divider(),
+              //Spacer(),
+              SizedBox(height: 15),
+              Text(
+                'Connect Using',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GoogleSignInButtonWidget(),
-                //   FacebookSignInButtonWidget(),
-              ],
-            ),
-            SizedBox(height: 18),
-          ],
+              SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GoogleSignInButtonWidget(),
+                  //   FacebookSignInButtonWidget(),
+                ],
+              ),
+              SizedBox(height: 18),
+            ],
+          ),
         ),
       ),
     );
