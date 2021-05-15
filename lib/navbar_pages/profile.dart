@@ -1,3 +1,4 @@
+import 'package:ease_the_error/profile/developers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +60,7 @@ class _ProfileState extends State<Profile> {
                       height: 30,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width,
+                      width: MediaQuery.of(context).size.width * 0.9,
                       height: 75,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
@@ -242,62 +243,70 @@ class _ProfileState extends State<Profile> {
                     SizedBox(
                       height: 30,
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 2),
-                          )
-                        ],
-                      ),
-                      //elevation : 10,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(20),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.person,
-                                    size: 32,
-                                    color: Colors.grey,
+                    MaterialButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DeveloperTeam()));
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 75,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              spreadRadius: 1,
+                              blurRadius: 2,
+                              offset: Offset(0, 2),
+                            )
+                          ],
+                        ),
+                        //elevation : 10,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 20),
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.person,
+                                      size: 32,
+                                      color: Colors.grey,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(width: 20),
-                              Text('Developer Team',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 22,
-                                  )),
-                              SizedBox(width: 8),
+                                SizedBox(width: 20),
+                                Text('Developer Team',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 22,
+                                    )),
+                                SizedBox(width: 8),
 
-                              Padding(
-                                padding: EdgeInsets.all(20),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.arrow_right,
-                                    size: 34,
-                                    color: Colors.grey,
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 20),
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.arrow_right,
+                                      size: 34,
+                                      color: Colors.grey,
+                                    ),
                                   ),
                                 ),
-                              ),
 
-                              // SizedBox(height: 20),
-                            ],
-                          ),
-                        ],
+                                // SizedBox(height: 20),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(

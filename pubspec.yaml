@@ -33,6 +33,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_sign_in: ^5.0.2
   toast: ^0.1.5
+  share: ^0.6.5+4
+
   url_launcher: ^5.0.0
   provider: ^5.0.0
   firebase_auth: ^1.1.1
@@ -87,6 +89,7 @@ flutter:
     - assets/academics.jpeg
     - assets/bus.jpeg
     - assets/canteen.jpeg
+    - assets/notes.jpg
     - assets/library.jpeg
     - assets/placement.jpeg
     - assets/sa.jpeg
@@ -140,6 +143,7 @@ flutter:
     - assets/camera.png
     - assets/default.jpg
     - assets/bg.png
+    - assets/dev.png
 
 
 
