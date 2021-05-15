@@ -137,6 +137,7 @@ class _HomeState extends State<Home> {
               ],
             ),
             Divider(),
+            SizedBox(height: 20),
             InkWell(
               onTap: () {
                 Navigator.push(
@@ -145,20 +146,31 @@ class _HomeState extends State<Home> {
                         builder: (context) => SizedBox.fromSize(
                               size: Size(100, 1000),
                               child: WebView(
-                                initialUrl:
-                                    "https://kishoremuthu.github.io/chatbot1.github.io/",
+                                initialUrl: "https://www.svce.ac.in/",
                                 javascriptMode: JavascriptMode.unrestricted,
                               ),
                             )));
               },
               child: ListTile(
-                title: Text('Developer Info'),
+                title: Text('Events'),
                 leading: Icon(
                   Icons.person,
                   color: Colors.grey,
                 ),
               ),
             ),
+            SizedBox(height: 5),
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('Ask Veronica'),
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+            SizedBox(height: 5),
             InkWell(
               onTap: () {
                 final provider =
