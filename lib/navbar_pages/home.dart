@@ -1,8 +1,10 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:ease_the_error/google_sign_in.dart';
 //import 'package:ease_the_error/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Home extends StatefulWidget {
@@ -96,36 +98,37 @@ class _HomeState extends State<Home> {
         child: ListView(
           children: [
             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  maxRadius: 60,
-                  backgroundImage: user.photoURL != null
-                      ? NetworkImage(user.photoURL)
-                      : AssetImage('assets/b.jpg'),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    "Welcome !!!",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 SizedBox(height: 8),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 20),
-                    Text(
-                      user.displayName,
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      user.email,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
+                    // SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Text(
+                        user.displayName,
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     SizedBox(height: 8),
@@ -157,7 +160,11 @@ class _HomeState extends State<Home> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                final provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                provider.logout();
+              },
               child: ListTile(
                 title: Text('Logout'),
                 leading: Icon(

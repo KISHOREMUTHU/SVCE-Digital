@@ -93,7 +93,7 @@ class _OatState extends State<Oat> {
       "item": "Cavins Milkshakes",
       "price": "Rs. 25",
       "availability_time": "10.00am-11.00am,2.30pm-4.00pm",
-      "path": "assets\/cavinsmilkshake.jpeg"
+      "path": "assets\/kavinsmilkshake.jpeg"
     },
     {
       "sl.no": 24,
@@ -145,7 +145,10 @@ class SingleProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => PorductDetails()));
+      },
       child: Padding(
         padding: const EdgeInsets.all(5),
         child: Container(
@@ -164,25 +167,29 @@ class SingleProduct extends StatelessWidget {
             ],
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(
+                width: 20,
+              ),
               Center(
                 child: Container(
+                  //  width: 35,
                   child: CircleAvatar(
                     radius: 35,
-                    backgroundImage: AssetImage('assets/canteen.jpeg'),
+                    backgroundImage: AssetImage(image),
                   ),
                 ),
               ),
-              SizedBox(width: 60),
+              SizedBox(width: 10),
               Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: Center(
                     child: Text(
-                  'Block I',
+                  item,
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 15,
                   ),
                 )),
               ),
@@ -191,5 +198,17 @@ class SingleProduct extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class PorductDetails extends StatefulWidget {
+  @override
+  _PorductDetailsState createState() => _PorductDetailsState();
+}
+
+class _PorductDetailsState extends State<PorductDetails> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
