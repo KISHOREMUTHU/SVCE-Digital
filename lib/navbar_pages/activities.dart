@@ -3,6 +3,7 @@ import 'package:ease_the_error/activities/canteen.dart';
 import 'package:ease_the_error/activities/dispensary.dart';
 import 'package:ease_the_error/activities/library.dart';
 import 'package:ease_the_error/activities/placements.dart';
+import 'package:ease_the_error/activities/transport.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -266,6 +267,182 @@ class _ActivitiesState extends State<Activities> {
                             height: 8,
                           ),
                           Text(' Dispensary '),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 40),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SizedBox.fromSize(
+                                            size: Size(100, 1000),
+                                            child: WebView(
+                                              initialUrl:
+                                                  "https://www.svce.ac.in/facilities/hostel/",
+                                              javascriptMode:
+                                                  JavascriptMode.unrestricted,
+                                            ),
+                                          )));
+                            },
+                            child: Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/hostel.jpg'),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(' Hostel '),
+                        ],
+                      ),
+                      SizedBox(width: 40),
+                      Column(
+                        children: [
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Transport()));
+                            },
+                            child: Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/bus.jpeg'),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(' Transport '),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 40),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SizedBox.fromSize(
+                                            size: Size(100, 1000),
+                                            child: WebView(
+                                              initialUrl:
+                                                  "https://www.svce.ac.in/research/office-of-the-dean-research/",
+                                              javascriptMode:
+                                                  JavascriptMode.unrestricted,
+                                            ),
+                                          )));
+                            },
+                            child: Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/research.jpg'),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text('Research'),
+                        ],
+                      ),
+                      SizedBox(width: 40),
+                      Column(
+                        children: [
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SizedBox.fromSize(
+                                            size: Size(100, 1000),
+                                            child: WebView(
+                                              initialUrl:
+                                                  "https://www.svce.ac.in/research/office-of-the-dean-research/",
+                                              javascriptMode:
+                                                  JavascriptMode.unrestricted,
+                                            ),
+                                          )));
+                            },
+                            child: Container(
+                              width: 130,
+                              height: 130,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/sa.jpeg'),
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text('Students Council'),
                         ],
                       ),
                     ],
