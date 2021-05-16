@@ -1,49 +1,85 @@
-class Coordinator {
-  String name, phone_number, block;
-  Coordinator(var v1, var v2, var v3) {
-    name = v1;
-    phone_number = v2;
-    block = v3;
+import 'classes.dart';
+import 'json.dart';
+
+
+
+
+List lostitems = [],founditems = [Item("watch","brown colour","3"),Item("bag","brown colour","3"),Item("wallet","black colour","2")];
+List coordinators = [];
+var i = 0;
+
+void addCoordinators()
+{
+  for(i = 0;i<places.length;++i)
+  {
+    coordinators.add(Coordinator(places[i]["Lost_Found Co-ordinator"],places[i]["Lost_Found Co-ordinator Mobile No"],places[i]["Place"]));
   }
+
 }
 
-class Item {
-  String itemName, description, block;
-  bool isFound;
 
-  Item(var v1, var v2, var v3, {var v4: false}) {
-    itemName = v1;
-    description = v2;
-    block = v3;
-    isFound = v4;
-  }
-}
 
-List lostitems = [],
-    founditems = [Item("watch", "brown", "3", v4: true)],
-    coordinators = [
-      Coordinator("Hari Kheshav", "987654321", "3"),
-      Coordinator("Kishore", "987654321", "2"),
-      Coordinator("Buvanesh", "987654321", "4"),
-      Coordinator("Nithin", "987654321", "5"),
-      Coordinator("Kitty", "987654321", "1")
-    ];
 
-void refreshLostitems() {
-  for (var i = 0; i < lostitems.length; ++i) {
-    if (lostitems[i].isFound) {
-      founditems.add(lostitems[i]);
-      lostitems.removeAt(i);
+
+void refreshLostitems()
+{
+  for(var i = 0;i<lostitems.length;++i)
+    {
+      if(lostitems[i].isReturned)
+        {
+          founditems.add(lostitems[i]);
+          lostitems.removeAt(i);
+        }
     }
+}
+
+bool checkFounditems(item)
+{
+  refreshLostitems();
+  for(var i = 0;i<founditems.length;++i)
+    {
+      if(item.itemName == founditems[i].itemName && item.description == founditems[i].description && item.block == founditems[i].block)
+        return true;
+
+    }
+  return false;
+}
+void addFounditem(item)
+{
+  founditems.add(Item(item.itemName,item.description,item.block));
+}
+
+
+bool updateFounditem(item)
+{
+  for(var i = 0;i<founditems.length;++i)
+  {
+    if(item.itemName == founditems[i].itemName && item.description == founditems[i].description && item.block == founditems[i].block)
+      {
+        founditems[i].isReturned = true;
+        return true;
+      }
+    return false;
+
   }
 }
 
-bool checkFounditems(item) {
-  refreshLostitems();
-  for (var i = 0; i < founditems.length; ++i) {
-    if (founditems[i].itemName == item.itemName &&
-        founditems[i].description == item.idescription &&
-        founditems[i].block == item.bock) return true;
+
+List viewLostitems()
+{
+  var lost_items = [];
+  for(var i = 0;i<lostitems.length;++i)
+    {
+      lost_items.add("${lostitems[i].itemName},${lostitems[i].description},${lostitems[i].place}");
+    }
+  return lost_items;
+}
+List viewFounditems()
+{
+  var found_items = [];
+  for(var i = 0;i<founditems.length;++i)
+  {
+    found_items.add("${founditems[i].itemName},${founditems[i].description},${founditems[i].place}");
   }
-  return false;
+  return found_items;
 }

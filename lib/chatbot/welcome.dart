@@ -1,10 +1,10 @@
-List welcomeMsg()
-{
-  String user = "User";
-  String wlcum =  "Welcome ${user}, I am Welcome :)";
+import 'package:firebase_auth/firebase_auth.dart';
 
+List welcomeMsg() {
+  final User user = FirebaseAuth.instance.currentUser;
+  String wlcum = "Welcome ${user.displayName}, I am Welcome :)";
 
-   String commands  = """
+  String commands = """
 
 Command         Description
 
@@ -41,8 +41,7 @@ Command         Description
 
 !time:                Returns the time.
 
-""" ;
+""";
 
-
-  return [wlcum,commands];
+  return [wlcum, commands];
 }
