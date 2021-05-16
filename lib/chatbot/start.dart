@@ -1,17 +1,16 @@
 import 'package:bubble/bubble.dart';
+import 'package:ease_the_error/chatbot/classes.dart';
 import 'package:ease_the_error/chatbot/cleanliness.dart';
+import 'package:ease_the_error/chatbot/lost_found.dart';
+import 'package:ease_the_error/chatbot/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-//import 'package:untitled/cleanliness.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'botcommands.dart';
-import 'classes.dart';
-import 'lost_found.dart';
-import 'welcome.dart';
 
 class MyHomePage extends StatefulWidget {
-//  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title}) : super(key: key);
 
 // This widget is the home page of your application. It is stateful, meaning
 // that it has a State object (defined below) that contains fields that affect
@@ -21,6 +20,8 @@ class MyHomePage extends StatefulWidget {
 // case the title) provided by the parent (in this case the App widget) and
 // used by the build method of the State. Fields in a Widget subclass are
 // always marked "final".
+
+  final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -33,7 +34,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     // TODO: implement initState
-
     var value = welcomeMsg();
     setState(() {
       messsages.insert(0, {
@@ -47,7 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
         "message": value[1],
       });
     });
-
+    setState(() {
+      messsages.insert(0, {
+        "data": 0,
+        "message": value[2],
+      });
+    });
     addCoordinators();
     addcleanlinessCoordinators();
     super.initState();
@@ -58,18 +63,16 @@ class _MyHomePageState extends State<MyHomePage> {
     var msg, i, ind;
     if (query.startsWith("!lost") && query.split(',').length == 3) {
       List lostData = query.substring(6).split(',');
-      print(lostData);
       lostitems.add(Item(lostData[0], lostData[1], lostData[2]));
       for (i = 0; i < coordinators.length; ++i) {
-        if (coordinators[i].place == lostData[2]) {
+        if (coordinators[i].place.toString().toLowerCase() ==
+            lostData[2].toString().toLowerCase()) {
           ind = i;
           break;
         }
       }
-
       if (!checkFounditems(lostitems.last)) {
         msg = "Details Noted. Please convey this to";
-
         setState(() {
           messsages.insert(0, {
             "data": 0,
@@ -88,10 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
         });
         lostitems.removeLast();
       }
-      print(lostitems);
     } else if (query.startsWith("!found") && query.split(',').length == 3) {
       List foundData = query.substring(7).split(',');
-      print(foundData);
       var item = Item(foundData[0], foundData[1], foundData[2]);
       for (i = 0; i < coordinators.length; ++i) {
         if (coordinators[i].place == foundData[2]) {
@@ -111,9 +112,9 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (query.startsWith("!cleanliness") &&
         query.split(',').length == 2) {
       List cleanData = query.substring(13).split(',');
-      print(cleanData);
       for (i = 0; i < cleanliness_coordinators.length; ++i) {
-        if (cleanliness_coordinators[i].place == cleanData[0]) {
+        if (cleanliness_coordinators[i].place.toString().toLowerCase() ==
+            cleanData[0].toString().toLowerCase()) {
           ind = i;
           break;
         }
@@ -130,7 +131,6 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (query.startsWith("!item_returned") &&
         query.split(',').length == 3) {
       List retData = query.substring(15).split(',');
-      print(retData);
       var item = Item(retData[0], retData[1], retData[2]);
       if (updateFounditem(item)) {
         setState(() {
@@ -161,7 +161,6 @@ class _MyHomePageState extends State<MyHomePage> {
       var items = viewFounditems(), v;
       for (var i = 0; i < items.length; ++i) {
         v = items[i].split(",");
-
         setState(() {
           messsages.insert(0, {
             "data": 0,
@@ -182,19 +181,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   )));
     } else if (query == "!admission") {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => SizedBox.fromSize(
-                    size: Size(100, 1000),
-                    child: WebView(
-                      initialUrl:
-                          "https://www.svce.ac.in/admission/programs-offered/",
-                      javascriptMode: JavascriptMode.unrestricted,
-                    ),
-                  )));
-    } else if (query.startsWith("!notes") && query.split(',').length == 2) {
-      List details = query.substring(7).split(',');
       Navigator.push(
           context,
           MaterialPageRoute(
