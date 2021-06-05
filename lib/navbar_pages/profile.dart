@@ -21,14 +21,14 @@ class _ProfileState extends State<Profile> {
             children: [
               Container(
                 height: MediaQuery.of(context).size.height,
-                // constraints: BoxConstraints.expand(),
+
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/wap.png'),
                     fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+                                        ),
+                                         ),
+                       ),
               Container(
                 height: 200,
                 decoration: BoxDecoration(
@@ -53,7 +53,7 @@ class _ProfileState extends State<Profile> {
                               Container(
                                 alignment: Alignment.topLeft,
                                 height: 110,
-                                child: CircleAvatar(
+                                 child: CircleAvatar(
                                   radius: 50,
                                   backgroundColor: Colors.white,
                                   child: ClipOval(
@@ -62,11 +62,11 @@ class _ProfileState extends State<Profile> {
                               ),
                               SizedBox(
                                 width: 50,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                                      ),
+                                      ],
+                             ),
+                                  ],
+                                ),
                     ),
                     SizedBox(
                       height: 30,

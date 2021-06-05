@@ -80,7 +80,7 @@ class CustomCard extends StatelessWidget {
                                         autofocus: true,
                                         autocorrect: true,
                                         decoration: InputDecoration(
-                                            labelText: 'Student Name   ',
+                                            labelText: 'Title     ',
                                             labelStyle: TextStyle(
                                               fontSize: 19,
                                             ),
@@ -94,7 +94,7 @@ class CustomCard extends StatelessWidget {
                                         autofocus: true,
                                         autocorrect: true,
                                         decoration: InputDecoration(
-                                            labelText: 'Dress Type        ',
+                                            labelText: 'Description  ',
                                             labelStyle: TextStyle(
                                               fontSize: 19,
                                             ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DeveloperTeam extends StatefulWidget {
@@ -19,10 +20,13 @@ class _DeveloperTeamState extends State<DeveloperTeam> {
         ),
       ),
       body: Container(
-        constraints: BoxConstraints.expand(),
+        //  constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/dev.png'),
+            fit: BoxFit.fill,
+            image: AssetImage(
+              'assets/dev.png',
+            ),
           ),
         ),
       ),

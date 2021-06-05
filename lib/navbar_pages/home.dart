@@ -2,7 +2,6 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:ease_the_error/chatbot/start.dart';
 import 'package:ease_the_error/doubt_app/board.dart';
 import 'package:ease_the_error/google_sign_in.dart';
-//import 'package:ease_the_error/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -214,159 +213,151 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              image_carousel,
-              SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'About Us',
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            image_carousel,
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                'About Us',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 27,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Text(
+                'SVCE is a unit of Sri Venkateswara Educational and Health Trust (SVEHT). The Trust was founded on 1 August 1985 at the behest and benign blessings of His Holiness Pujashree Kanchi Kamakoti Peedathipathi Sri Jayendra Saraswathi Swamigal. Dr. A. C. Muthiah, a renowned engineer, industrialist and philanthropist, is the Chairman of the Governing Council of the college. The college is in a 95 acre lush green Campus. It is housed in architecturally exquisite buildings with ample infrastructure such as classrooms, laboratories, libraries, sports arena, canteen, hostels, dispensary, bank etc.,',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                'Mission',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 27,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Text(
+                "To develop SVCE as a 'CENTRE OF EXCELLENCE' offering Engineering Education to men and women at undergraduate and postgraduate degree levels, bringing out their total personality, emphasising ethical values and preparing them to meet the growing challenges of the industry and diverse societal needs of our nation.",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                'Quality Policy',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 27,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Text(
+                "To impart quality education in Science, Engineering and Technology, nurturing right attitudes towards scholarship, research and entrepreneurship, enabling students to meet the challenges of industry, including Standards of Training, Certification and Watch keeping (STCW) requirements, society and environment.",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 300,
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/achieve.jpeg'),
+                ),
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+            SizedBox(height: 50),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Top Recruiters',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue,
                     fontSize: 27,
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
+                SizedBox(
+                  height: 20,
                 ),
-                child: Expanded(
-                  child: Text(
-                    'SVCE is a unit of Sri Venkateswara Educational and Health Trust (SVEHT). The Trust was founded on 1 August 1985 at the behest and benign blessings of His Holiness Pujashree Kanchi Kamakoti Peedathipathi Sri Jayendra Saraswathi Swamigal. Dr. A. C. Muthiah, a renowned engineer, industrialist and philanthropist, is the Chairman of the Governing Council of the college. The college is in a 95 acre lush green Campus. It is housed in architecturally exquisite buildings with ample infrastructure such as classrooms, laboratories, libraries, sports arena, canteen, hostels, dispensary, bank etc.,',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'Mission',
+                job_carousel,
+              ],
+            ),
+            SizedBox(height: 50),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Activities',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue,
                     fontSize: 27,
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
+                SizedBox(
+                  height: 20,
                 ),
-                child: Expanded(
-                  child: Text(
-                    "To develop SVCE as a 'CENTRE OF EXCELLENCE' offering Engineering Education to men and women at undergraduate and postgraduate degree levels, bringing out their total personality, emphasising ethical values and preparing them to meet the growing challenges of the industry and diverse societal needs of our nation.",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'Quality Policy',
+                Image.asset('assets/act.jpeg'),
+              ],
+            ),
+            SizedBox(height: 50),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Our Prominent Alumni',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.blue,
                     fontSize: 27,
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
+                SizedBox(
+                  height: 20,
                 ),
-                child: Expanded(
-                  child: Text(
-                    "To impart quality education in Science, Engineering and Technology, nurturing right attitudes towards scholarship, research and entrepreneurship, enabling students to meet the challenges of industry, including Standards of Training, Certification and Watch keeping (STCW) requirements, society and environment.",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 30),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 300,
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/achieve.jpeg'),
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-              SizedBox(height: 50),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Top Recruiters',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 27,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  job_carousel,
-                ],
-              ),
-              SizedBox(height: 50),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Activities',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 27,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Image.asset('assets/act.jpeg'),
-                ],
-              ),
-              SizedBox(height: 50),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Our Prominent Alumni',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 27,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  alumni_carousel,
-                ],
-              ),
-              SizedBox(height: 50),
-            ],
-          ),
+                alumni_carousel,
+              ],
+            ),
+            SizedBox(height: 50),
+          ],
         ),
       ),
     );

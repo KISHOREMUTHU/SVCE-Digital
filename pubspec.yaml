@@ -43,6 +43,7 @@ dependencies:
   font_awesome_flutter: ^9.0.0
   webview_flutter: ^1.0.7
   carousel_pro: ^1.0.0
+  google_fonts: ^2.1.0
 
 
 dev_dependencies:
@@ -145,6 +146,15 @@ flutter:
     - assets/bg.png
     - assets/dev.png
     - assets/wap.png
+    - assets/welcome.png
+    - assets/svce/activities.jpeg
+    - assets/svce/chatbot.jpeg
+    - assets/svce/erp.jpeg
+    - assets/svce/home1.jpeg
+    - assets/svce/login.jpeg
+    - assets/svce/notes.jpeg
+    - assets/svce/profile.jpeg
+    - assets/svce/signup.jpeg
 
 
 
