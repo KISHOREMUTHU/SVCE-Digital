@@ -54,6 +54,14 @@ A Multi - Functional Flutter Application for SVCE Users.
 
 ## Images 
 
+![](assets/svce/login.jpeg)
+![](assets/svce/signup.jpeg)
+![](assets/svce/home1.jpeg)
+![](assets/svce/activities.jpeg)
+![](assets/svce/chatbot.jpeg)
+![](assets/svce/erp.jpeg)
+![](assets/svce/notes.jpeg)
+![](assets/svce/profile.jpeg)
 
 
 
