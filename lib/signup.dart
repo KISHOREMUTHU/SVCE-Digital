@@ -61,7 +61,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         Icons.lock,
                         color: Colors.amber,
                       ),
-                      suffixIcon: FlatButton(
+                      suffixIcon: MaterialButton(
                           onPressed: () {
                             if (data == 0) {
                               setState(() {
