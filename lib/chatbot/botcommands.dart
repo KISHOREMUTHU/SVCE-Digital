@@ -15,10 +15,12 @@ var queries = [Queries(), Queries(), Queries(), Queries()];
 void addQueries() {
   queries[0].queries = [
     "hi",
+    "heyy",
     "hi there",
     "whats your name ?",
     "hello",
     "hey",
+    "hey buddy",
     "hey there",
     "hey there !"
   ];

@@ -12,14 +12,6 @@ import 'botcommands.dart';
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
-// This widget is the home page of your application. It is stateful, meaning
-// that it has a State object (defined below) that contains fields that affect
-// how it looks.
-
-// This class is the configuration for the state. It holds the values (in this
-// case the title) provided by the parent (in this case the App widget) and
-// used by the build method of the State. Fields in a Widget subclass are
-// always marked "final".
 
   final String title;
 
@@ -77,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
           messsages.insert(0, {
             "data": 0,
             "message":
-                "${msg} Co-ordinator: ${coordinators[ind].name},Phone: ${coordinators[ind].phone_number},Place: ${coordinators[ind].place}"
+                "$msg Co-ordinator: ${coordinators[ind].name},Phone: ${coordinators[ind].phone_number},Place: ${coordinators[ind].place}"
           });
         });
       } else {
@@ -86,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
           messsages.insert(0, {
             "data": 0,
             "message":
-                "${msg} Co-ordinator: ${coordinators[i].name},Phone: ${coordinators[i].phone_number}, Place: ${coordinators[i].place}, for more details."
+                "$msg Co-ordinator: ${coordinators[i].name},Phone: ${coordinators[i].phone_number}, Place: ${coordinators[i].place}, for more details."
           });
         });
         lostitems.removeLast();
@@ -106,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
         messsages.insert(0, {
           "data": 0,
           "message":
-              "${msg} Co-ordinator: ${coordinators[i].name},Phone: ${coordinators[i].phone_number}, Place: ${coordinators[i].place},and convey this."
+              "$msg Co-ordinator: ${coordinators[i].name},Phone: ${coordinators[i].phone_number}, Place: ${coordinators[i].place},and convey this."
         });
       });
     } else if (query.startsWith("!cleanliness") &&
@@ -125,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
         messsages.insert(0, {
           "data": 0,
           "message":
-              "${msg} Co-ordinator: ${cleanliness_coordinators[i].name},Phone: ${cleanliness_coordinators[i].phone_number}, Location: ${cleanliness_coordinators[i].place},and convey this."
+              "$msg Co-ordinator: ${cleanliness_coordinators[i].name},Phone: ${cleanliness_coordinators[i].phone_number}, Location: ${cleanliness_coordinators[i].place},and convey this."
         });
       });
     } else if (query.startsWith("!item_returned") &&

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 List welcomeMsg() {
   final User user = FirebaseAuth.instance.currentUser;
-  String wlcum = "Welcome ${user.displayName}, I am Veronica :)";
+  String wlcum = "Hi ${user.displayName}, I am Veronica :)";
 
   String cmnd = "Basic Commands 👇";
   String commands = """

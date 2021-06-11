@@ -107,7 +107,7 @@ class CustomCard extends StatelessWidget {
                                   ],
                                 ),
                                 actions: [
-                                  FlatButton(
+                                  MaterialButton(
                                     child: Text('Cancel'),
                                     onPressed: () {
                                       titleController.clear();
@@ -116,7 +116,7 @@ class CustomCard extends StatelessWidget {
                                       Navigator.pop(context);
                                     },
                                   ),
-                                  FlatButton(
+                                  MaterialButton(
                                     //color : Colors.grey,
                                     child: Text('Update'),
                                     onPressed: () {

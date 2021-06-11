@@ -91,7 +91,7 @@ class _BoardAppState extends State<BoardApp> {
               ],
             ),
             actions: [
-              FlatButton(
+              MaterialButton(
                 child: Text('Cancel'),
                 onPressed: () {
                   titleController.clear();
@@ -100,7 +100,7 @@ class _BoardAppState extends State<BoardApp> {
                   Navigator.pop(context);
                 },
               ),
-              FlatButton(
+              MaterialButton(
                 child: Text('Save'),
                 onPressed: () {
                   if (titleController.text.isNotEmpty &&
