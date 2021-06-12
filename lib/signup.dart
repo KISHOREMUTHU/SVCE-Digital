@@ -17,11 +17,12 @@ class _SignInWidgetState extends State<SignInWidget> {
   var data = 0;
   @override
   Widget build(BuildContext context) {
+    final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
+          height: deviceSize.height,
+          width: deviceSize.width,
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.fill,
@@ -35,7 +36,7 @@ class _SignInWidgetState extends State<SignInWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: MediaQuery.of(context).size.height * 0.30),
+                SizedBox(height: deviceSize.height * 0.30),
                 TextFieldController(
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
@@ -79,38 +80,41 @@ class _SignInWidgetState extends State<SignInWidget> {
                     ),
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                SizedBox(height: deviceSize.height * 0.01),
                 RoundedButton(
                   textColor: Colors.white,
                   text: 'Login',
                   color: Colors.blue[900],
                   press: () {},
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                SizedBox(height: deviceSize.height * 0.02),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Center(
+                    Container(
+                      padding: EdgeInsets.all(5),
                       child: Text(
                         'Or',
                         style: GoogleFonts.poppins(
-                          fontSize: 30,
+                          fontSize: 18,
                           color: Colors.grey,
                         ),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.025),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    GoogleSignInButtonWidget(),
-                    //   FacebookSignInButtonWidget(,
-                  ],
+                Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      GoogleSignInButtonWidget(),
+                      //   FacebookSignInButtonWidget(,
+                    ],
+                  ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.145),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -152,7 +156,7 @@ class GoogleSignInButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      width: 250,
+      width: 270,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(40),
