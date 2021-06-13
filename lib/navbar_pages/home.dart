@@ -5,8 +5,9 @@ import 'package:ease_the_error/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -94,119 +95,201 @@ class _HomeState extends State<Home> {
         ),
       ),
       drawer: new Drawer(
-        // var user = FirebaseAuth.instance.currentUser;
-
         child: ListView(
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text(
-                    "Welcome !!!",
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 8),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Text(
-                        user.displayName,
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.30,
+              decoration: BoxDecoration(
+                color: Colors.amber,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 300,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/svce.png'),
                       ),
                     ),
-                    SizedBox(height: 8),
-                  ],
-                ),
-              ],
-            ),
-            Divider(),
-            SizedBox(height: 20),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SizedBox.fromSize(
-                              size: Size(100, 1000),
-                              child: WebView(
-                                initialUrl: "https://www.svce.ac.in/",
-                                javascriptMode: JavascriptMode.unrestricted,
-                              ),
-                            )));
-              },
-              child: ListTile(
-                title: Text('Events'),
-                leading: Icon(
-                  Icons.control_point,
-                  color: Colors.grey,
-                ),
-                trailing: Icon(Icons.arrow_right, size: 32),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20.0, 0, 0, 20),
+                    child: Text(
+                      "Welcome !!!",
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.7,
+                          child: Text(
+                            user.displayName,
+                            textAlign: TextAlign.start,
+                            style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                    ],
+                  ),
+                ],
               ),
             ),
-            // SizedBox(height: 5),
-            Divider(),
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyHomePage()));
-              },
-              child: ListTile(
-                title: Text('Ask Veronica'),
-                leading: Icon(
-                  Icons.person,
-                  color: Colors.grey,
-                ),
-                trailing: Icon(Icons.arrow_right, size: 32),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.65,
+              decoration: BoxDecoration(
+                color: Colors.blue[900],
               ),
-            ),
-            // SizedBox(height: 5),
-            Divider(),
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BoardApp()));
-              },
-              child: ListTile(
-                title: Text('Sticky Notes'),
-                leading: Icon(
-                  Icons.notes,
-                  color: Colors.grey,
-                ),
-                trailing: Icon(Icons.arrow_right, size: 32),
-              ),
-            ),
-            //  SizedBox(height: 5),
-            Divider(),
-            SizedBox(height: 30),
-            InkWell(
-              onTap: () {
-                final provider =
-                    Provider.of<GoogleSignInProvider>(context, listen: false);
-                provider.logout();
-              },
-              child: ListTile(
-                title: Text('Logout'),
-                leading: Icon(
-                  Icons.logout,
-                ),
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      _launchURL("https://www.svce.ac.in/");
+                    },
+                    child: ListTile(
+                      title: Text(
+                        'Events',
+                        style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                        ),
+                      ),
+                      leading: Icon(
+                        Icons.control_point,
+                        color: Colors.white,
+                      ),
+                      trailing: Icon(Icons.arrow_right,
+                          color: Colors.white, size: 32),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Divider(
+                      color: Colors.white,
+                      thickness: 1,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      _launchURL("https://svce.mastersofterp.in/");
+                    },
+                    child: ListTile(
+                      title: Text(
+                        'Student ERP',
+                        style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                        ),
+                      ),
+                      leading: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      trailing: Icon(Icons.arrow_right,
+                          color: Colors.white, size: 32),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Divider(
+                      color: Colors.white,
+                      thickness: 1,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyHomePage()));
+                    },
+                    child: ListTile(
+                      title: Text(
+                        'Ask Veronica',
+                        style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                        ),
+                      ),
+                      leading: Icon(
+                        Icons.help,
+                        color: Colors.white,
+                      ),
+                      trailing: Icon(Icons.arrow_right,
+                          color: Colors.white, size: 32),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Divider(
+                      color: Colors.white,
+                      thickness: 1,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => BoardApp()));
+                    },
+                    child: ListTile(
+                      title: Text(
+                        'Sticky Notes',
+                        style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                        ),
+                      ),
+                      leading: Icon(
+                        Icons.notes,
+                        color: Colors.white,
+                      ),
+                      trailing: Icon(Icons.arrow_right,
+                          color: Colors.white, size: 32),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Divider(
+                      color: Colors.white,
+                      thickness: 1,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      final provider = Provider.of<GoogleSignInProvider>(
+                          context,
+                          listen: false);
+                      provider.logout();
+                    },
+                    child: ListTile(
+                      title: Text(
+                        'Logout',
+                        style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                        ),
+                      ),
+                      trailing: Icon(Icons.arrow_right,
+                          color: Colors.white, size: 32),
+                      leading: Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -361,5 +444,14 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+  }
+
+  _launchURL(String place) async {
+    var url = place;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

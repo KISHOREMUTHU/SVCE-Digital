@@ -22,6 +22,8 @@ class _LoginWidgetState extends State<LoginWidget> {
     return Scaffold(
       body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.amber,
+          fixedColor: Colors.blue[900],
           currentIndex: _currentIndex,
           type: BottomNavigationBarType.fixed,
           iconSize: 20,

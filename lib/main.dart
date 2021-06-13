@@ -1,6 +1,5 @@
 import 'package:ease_the_error/google_sign_in.dart';
 import 'package:ease_the_error/login.dart';
-import 'package:ease_the_error/navbar_pages/activities.dart';
 import 'package:ease_the_error/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,9 +8,7 @@ import 'package:provider/provider.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp();
-
   runApp(MyApp());
 }
 

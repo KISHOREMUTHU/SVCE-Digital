@@ -17,8 +17,8 @@ class _ActivitiesState extends State<Activities> {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.amber[500], Colors.blue[900]])),
+                  end: Alignment.bottomRight,
+                  colors: [Colors.black54, Colors.black87])),
           child: SingleChildScrollView(
             child: Column(children: [
               Container(
@@ -29,7 +29,7 @@ class _ActivitiesState extends State<Activities> {
                   'Activities',
                   style: GoogleFonts.montserrat(
                     textStyle: TextStyle(
-                        color: Colors.blue[900],
+                        color: Colors.white,
                         letterSpacing: .5,
                         fontSize: 36,
                         fontWeight: FontWeight.normal),
@@ -37,6 +37,7 @@ class _ActivitiesState extends State<Activities> {
                 ),
               ),
               Container(width: double.infinity, child: ActivityGrid()),
+              Container(height: 100),
             ]),
           ),
         ),
