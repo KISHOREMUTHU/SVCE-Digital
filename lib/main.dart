@@ -1,5 +1,6 @@
 import 'package:ease_the_error/google_sign_in.dart';
 import 'package:ease_the_error/login.dart';
+import 'package:ease_the_error/navbar_pages/activities.dart';
 import 'package:ease_the_error/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SVCE Mobile',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      darkTheme: ThemeData(
+        primarySwatch: Colors.orange,
+        accentColor: Colors.amber,
       ),
       home: HomePage(),
     );
