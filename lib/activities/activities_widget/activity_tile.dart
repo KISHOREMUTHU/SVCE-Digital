@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ActivityTile extends StatelessWidget {
@@ -11,8 +12,8 @@ class ActivityTile extends StatelessWidget {
       @required this.materialRoute});
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 8,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(15),
       child: GridTile(
           child: GestureDetector(
             onTap: () {
@@ -34,14 +35,17 @@ class ActivityTile extends StatelessWidget {
           ),
           footer: GridTileBar(
             backgroundColor: Colors.black45,
-            title: Text(text,
-                softWrap: true,
-                overflow: TextOverflow.fade,
-                textAlign: TextAlign.center,
-                style: TextStyle(
+            title: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: .5,
                   fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                )),
+                ),
+              ),
+            ),
           )),
     );
   }

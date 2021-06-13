@@ -8,8 +8,8 @@ class ActivityGrid extends StatelessWidget {
     final activitiesList = ActivityProvider().activitiesList;
 
     return GridView.builder(
-      scrollDirection: Axis.vertical ,
-      shrinkWrap: true ,
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
       padding: const EdgeInsets.all(10),
       itemCount: activitiesList.length,
       itemBuilder: (ctx, index) => ActivityTile(
@@ -18,11 +18,10 @@ class ActivityGrid extends StatelessWidget {
         materialRoute: activitiesList[index].materialRoute,
       ),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2 , 
-        childAspectRatio: 3/2 , 
-        crossAxisSpacing: 10 , 
-        mainAxisSpacing: 10 , 
-
+        crossAxisCount: 2,
+        childAspectRatio: 3 / 2,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
       ),
     );
   }

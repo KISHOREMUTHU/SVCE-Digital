@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         accentColor: Colors.amber,
       ),
-      home: Activities(),
+      home: HomePage(),
     );
   }
 }
