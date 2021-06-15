@@ -1,12 +1,9 @@
 import 'package:ease_the_error/google_sign_in.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-//import 'package:smartrobos/google_sign_in.dart';
 
 class SignInWidget extends StatefulWidget {
   @override
@@ -26,21 +23,19 @@ class _SignInWidgetState extends State<SignInWidget> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage('assets/welcome.png'),
+              image: AssetImage('assets/welcome.gif'),
             ),
           ),
           child: Container(
-            //   constraints: BoxConstraints.expand(),
-
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: deviceSize.height * 0.30),
+                SizedBox(height: deviceSize.height * 0.18),
                 TextFieldController(
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
-                    style: GoogleFonts.poppins(),
+                    style: GoogleFonts.montserrat(),
                     onChanged: (value) {},
                     decoration: InputDecoration(
                       icon: Icon(
@@ -54,7 +49,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                 ),
                 TextFieldController(
                   child: TextField(
-                    style: GoogleFonts.poppins(),
+                    style: GoogleFonts.montserrat(),
                     obscureText: data == 0 ? true : false,
                     onChanged: (value) {},
                     decoration: InputDecoration(
@@ -87,7 +82,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                   color: Colors.blue[900],
                   press: () {},
                 ),
-                SizedBox(height: deviceSize.height * 0.02),
+                SizedBox(height: deviceSize.height * 0.03),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,8 +91,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                       padding: EdgeInsets.all(5),
                       child: Text(
                         'Or',
-                        style: GoogleFonts.poppins(
-                          fontSize: 18,
+                        style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
                           color: Colors.grey,
                         ),
                       ),
@@ -114,14 +110,14 @@ class _SignInWidgetState extends State<SignInWidget> {
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.145),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "Don't have an account ?  ",
-                      style: GoogleFonts.poppins(
-                        fontSize: 16,
+                      style: GoogleFonts.montserrat(
+                        fontSize: 18,
                         color: Colors.white,
                       ),
                     ),
@@ -134,8 +130,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                       },
                       child: Text(
                         'Sign Up',
-                        style: GoogleFonts.poppins(
-                          fontSize: 18,
+                        style: GoogleFonts.montserrat(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                           color: Colors.amber,
                         ),
                       ),
@@ -156,9 +153,9 @@ class GoogleSignInButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      width: 270,
+      width: 250,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.red,
         borderRadius: BorderRadius.circular(40),
         boxShadow: [
           BoxShadow(
@@ -179,14 +176,14 @@ class GoogleSignInButtonWidget extends StatelessWidget {
         },
         icon: FaIcon(
           FontAwesomeIcons.google,
-          size: 32,
-          color: Colors.red,
+          size: 30,
+          color: Colors.white,
         ),
-        label: Text('Sign In With Google',
-            style: GoogleFonts.poppins(
-              color: Colors.red,
+        label: Text('  Google  ',
+            style: GoogleFonts.montserrat(
+              color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: 20,
             )),
       ),
     );
