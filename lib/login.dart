@@ -1,8 +1,9 @@
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:ease_the_error/navbar_pages/activities.dart';
-import 'package:ease_the_error/navbar_pages/erp.dart';
 import 'package:ease_the_error/navbar_pages/home.dart';
 import 'package:ease_the_error/navbar_pages/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginWidget extends StatefulWidget {
   @override
@@ -11,45 +12,91 @@ class LoginWidget extends StatefulWidget {
 
 class _LoginWidgetState extends State<LoginWidget> {
   int _currentIndex = 0;
+  List<IconData> data = [
+    Icons.home,
+    Icons.storage,
+    Icons.location_on_sharp,
+    Icons.brunch_dining,
+    Icons.person,
+  ];
   final tabs = [
     Home(),
     Activities(),
-    Erp(),
+    Container(),
+    Container(),
     Profile(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: tabs[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.amber,
-          fixedColor: Colors.blue[900],
-          currentIndex: _currentIndex,
-          type: BottomNavigationBarType.fixed,
-          iconSize: 20,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+      bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Colors.blue.shade900,
+        items: <BottomNavyBarItem>[
+          BottomNavyBarItem(
+            icon: Icon(Icons.home),
+            title: Text(
+              'Home',
+              style: GoogleFonts.montserrat(
+                fontSize: 15,
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.storage),
-              label: 'Our Activities',
+            activeColor: Colors.orangeAccent,
+            inactiveColor: Colors.white,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.storage),
+            title: Text(
+              'Activities',
+              style: GoogleFonts.montserrat(
+                fontSize: 15,
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.important_devices),
-              label: 'Student ERP',
+            activeColor: Colors.orangeAccent,
+            inactiveColor: Colors.white,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.location_on_sharp),
+            title: Text(
+              'Navigate',
+              style: GoogleFonts.montserrat(
+                fontSize: 15,
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
+            activeColor: Colors.orangeAccent,
+            inactiveColor: Colors.white,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.brunch_dining),
+            title: Text(
+              'Foods',
+              style: GoogleFonts.montserrat(
+                fontSize: 15,
+              ),
             ),
-          ],
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          }),
+            activeColor: Colors.orangeAccent,
+            inactiveColor: Colors.white,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.person),
+            title: Text(
+              'Profile',
+              style: GoogleFonts.montserrat(
+                fontSize: 15,
+              ),
+            ),
+            activeColor: Colors.orangeAccent,
+            inactiveColor: Colors.white,
+          ),
+        ],
+        animationDuration: Duration(milliseconds: 300),
+        selectedIndex: _currentIndex,
+        onItemSelected: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+      ),
     );
   }
 }

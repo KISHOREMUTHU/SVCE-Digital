@@ -34,7 +34,7 @@ dependencies:
   google_sign_in: ^5.0.2
   toast: ^0.1.5
   share: ^0.6.5+4
-
+  curved_navigation_bar: ^0.4.0-nullsafety.0
   url_launcher: ^5.0.0
   provider: ^5.0.0
   firebase_auth: ^1.1.1
@@ -44,6 +44,7 @@ dependencies:
   webview_flutter: ^1.0.7
   carousel_pro: ^1.0.0
   google_fonts: ^2.1.0
+  bottom_navy_bar: ^6.0.0
 
 
 dev_dependencies:

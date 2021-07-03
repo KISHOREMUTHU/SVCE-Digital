@@ -16,7 +16,20 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Widget image_carousel = new Container(
-    height: 180.0,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(15),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey,
+          spreadRadius: 1,
+          blurRadius: 1,
+          offset: Offset(0, 2),
+        )
+      ],
+    ),
+    padding: EdgeInsets.all(15),
+    height: 220.0,
     child: new Carousel(
       boxFit: BoxFit.cover,
       images: [
@@ -83,14 +96,15 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.orangeAccent,
         iconTheme: IconThemeData(
-          color: Colors.black87,
+          color: Colors.blue.shade900,
         ),
         title: Text(
           'SVCE Mobile',
-          style: TextStyle(
-            color: Colors.black,
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.bold,
+            color: Colors.blue.shade900,
           ),
         ),
       ),
@@ -100,7 +114,7 @@ class _HomeState extends State<Home> {
             Container(
               height: MediaQuery.of(context).size.height * 0.30,
               decoration: BoxDecoration(
-                color: Colors.amber,
+                color: Colors.orangeAccent,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -300,6 +314,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 20),
             image_carousel,
             SizedBox(height: 10),
             Padding(
