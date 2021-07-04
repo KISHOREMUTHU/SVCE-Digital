@@ -15,10 +15,12 @@ class _ActivitiesState extends State<Activities> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.black54, Colors.black87])),
+            image: DecorationImage(
+                image: AssetImage(
+                  'assets/activites_bg.png',
+                ),
+                fit: BoxFit.cover),
+          ),
           child: SingleChildScrollView(
             child: Column(children: [
               Container(
@@ -29,7 +31,7 @@ class _ActivitiesState extends State<Activities> {
                   'Activities',
                   style: GoogleFonts.montserrat(
                     textStyle: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         letterSpacing: .5,
                         fontSize: 36,
                         fontWeight: FontWeight.normal),
@@ -37,7 +39,7 @@ class _ActivitiesState extends State<Activities> {
                 ),
               ),
               Container(width: double.infinity, child: ActivityGrid()),
-              Container(height: 100),
+              Container(height: 40),
             ]),
           ),
         ),

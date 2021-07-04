@@ -3,6 +3,7 @@ import 'package:ease_the_error/chatbot/start.dart';
 import 'package:ease_the_error/doubt_app/board.dart';
 import 'package:ease_the_error/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,60 +16,64 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Widget image_carousel = new Container(
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(15),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey,
-          spreadRadius: 1,
-          blurRadius: 1,
-          offset: Offset(0, 2),
-        )
-      ],
-    ),
-    padding: EdgeInsets.all(15),
-    height: 220.0,
-    child: new Carousel(
-      boxFit: BoxFit.cover,
-      images: [
-        AssetImage("assets/img1.jpeg"),
-        AssetImage("assets/img2.jpeg"),
-        AssetImage("assets/img3.jpeg"),
-        AssetImage("assets/img4.jpeg"),
-        AssetImage("assets/img5.jpeg"),
-        AssetImage("assets/img6.jpeg"),
-        AssetImage("assets/img7.jpeg"),
-        AssetImage("assets/img8.jpeg"),
-      ],
-      autoplay: true,
-      dotSize: 4.0,
-      indicatorBgPadding: 2.0,
-      dotBgColor: Colors.transparent,
-      animationCurve: Curves.fastOutSlowIn,
-      animationDuration: Duration(milliseconds: 2000),
-    ),
-  );
-  Widget job_carousel = new Container(
-    height: 180.0,
-    child: new Carousel(
-      boxFit: BoxFit.cover,
-      images: [
-        AssetImage("assets/emp.jpeg"),
-        AssetImage("assets/emp2.jpeg"),
-        AssetImage("assets/emp3.jpeg"),
-        AssetImage("assets/emp1.jpeg"),
-        AssetImage("assets/emp5.jpeg"),
-      ],
-      autoplay: true,
-      dotSize: 4.0,
-      indicatorBgPadding: 2.0,
-      dotBgColor: Colors.transparent,
-      animationCurve: Curves.fastOutSlowIn,
-      animationDuration: Duration(milliseconds: 2000),
-    ),
-  );
+  Widget image_carousel = new Padding(
+      padding: EdgeInsets.all(10),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: Offset(0, 2),
+            )
+          ],
+        ),
+        padding: EdgeInsets.all(10),
+        height: 220.0,
+        child: new Carousel(
+          boxFit: BoxFit.cover,
+          images: [
+            AssetImage("assets/img1.jpeg"),
+            AssetImage("assets/img2.jpeg"),
+            AssetImage("assets/img3.jpeg"),
+            AssetImage("assets/img4.jpeg"),
+            AssetImage("assets/img5.jpeg"),
+            AssetImage("assets/img6.jpeg"),
+            AssetImage("assets/img7.jpeg"),
+            AssetImage("assets/img8.jpeg"),
+          ],
+          autoplay: true,
+          dotSize: 4.0,
+          indicatorBgPadding: 2.0,
+          dotBgColor: Colors.transparent,
+          animationCurve: Curves.fastOutSlowIn,
+          animationDuration: Duration(milliseconds: 2000),
+        ),
+      ));
+  Widget job_carousel = new Padding(
+      padding: EdgeInsets.all(20),
+      child: Container(
+        height: 180.0,
+        child: new Carousel(
+          boxFit: BoxFit.cover,
+          images: [
+            AssetImage("assets/emp.jpeg"),
+            AssetImage("assets/emp2.jpeg"),
+            AssetImage("assets/emp3.jpeg"),
+            AssetImage("assets/emp1.jpeg"),
+            AssetImage("assets/emp5.jpeg"),
+          ],
+          autoplay: true,
+          dotSize: 4.0,
+          indicatorBgPadding: 2.0,
+          dotBgColor: Colors.transparent,
+          animationCurve: Curves.fastOutSlowIn,
+          animationDuration: Duration(milliseconds: 2000),
+        ),
+      ));
   Widget alumni_carousel = new Container(
     height: 500.0,
     child: new Carousel(
@@ -96,15 +101,13 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orangeAccent,
-        iconTheme: IconThemeData(
-          color: Colors.blue.shade900,
-        ),
+        backgroundColor: Colors.blue.shade900,
+        iconTheme: IconThemeData(color: Colors.white),
         title: Text(
           'SVCE Mobile',
           style: GoogleFonts.montserrat(
             fontWeight: FontWeight.bold,
-            color: Colors.blue.shade900,
+            color: Colors.white,
           ),
         ),
       ),
@@ -114,7 +117,7 @@ class _HomeState extends State<Home> {
             Container(
               height: MediaQuery.of(context).size.height * 0.30,
               decoration: BoxDecoration(
-                color: Colors.orangeAccent,
+                color: Colors.amber,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -309,153 +312,289 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 20),
-            image_carousel,
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                'About Us',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 27,
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-              ),
-              child: Text(
-                'SVCE is a unit of Sri Venkateswara Educational and Health Trust (SVEHT). The Trust was founded on 1 August 1985 at the behest and benign blessings of His Holiness Pujashree Kanchi Kamakoti Peedathipathi Sri Jayendra Saraswathi Swamigal. Dr. A. C. Muthiah, a renowned engineer, industrialist and philanthropist, is the Chairman of the Governing Council of the college. The college is in a 95 acre lush green Campus. It is housed in architecturally exquisite buildings with ample infrastructure such as classrooms, laboratories, libraries, sports arena, canteen, hostels, dispensary, bank etc.,',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                'Mission',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 27,
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-              ),
-              child: Text(
-                "To develop SVCE as a 'CENTRE OF EXCELLENCE' offering Engineering Education to men and women at undergraduate and postgraduate degree levels, bringing out their total personality, emphasising ethical values and preparing them to meet the growing challenges of the industry and diverse societal needs of our nation.",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                'Quality Policy',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 27,
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-              ),
-              child: Text(
-                "To impart quality education in Science, Engineering and Technology, nurturing right attitudes towards scholarship, research and entrepreneurship, enabling students to meet the challenges of industry, including Standards of Training, Certification and Watch keeping (STCW) requirements, society and environment.",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-            SizedBox(height: 30),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 300,
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/achieve.jpeg'),
-                ),
-                borderRadius: BorderRadius.circular(15),
-              ),
-            ),
-            SizedBox(height: 50),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Top Recruiters',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 27,
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage('assets/home_bg.png'),
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 20),
+              image_carousel,
+              SizedBox(height: 10),
+              SizedBox(height: 10),
+              FlipCard(
+                front: Container(
+                  height: MediaQuery.of(context).size.height * 0.44,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.white,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/ambercard.png'),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(20.0),
+                  child: Center(
+                    child: Text(
+                      'About Us',
+                      style: GoogleFonts.montserrat(
+                        color: Colors.black,
+                        fontSize: 35,
+                      ),
+                    ),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                job_carousel,
-              ],
-            ),
-            SizedBox(height: 50),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Activities',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 27,
+                back: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18),
+                      color: Colors.blue.shade900,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 2),
+                        )
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            'SVCE is a unit of Sri Venkateswara Educational and Health Trust (SVEHT). The Trust was founded on 1 August 1985 at the behest and benign blessings of His Holiness Pujashree Kanchi Kamakoti Peedathipathi Sri Jayendra Saraswathi Swamigal. Dr. A. C. Muthiah, a renowned engineer, industrialist and philanthropist, is the Chairman of the Governing Council of the college. The college is in a 95 acre lush green Campus. It is housed in architecturally exquisite buildings with ample infrastructure such as classrooms, laboratories, libraries, sports arena, canteen, hostels, dispensary, bank etc.,',
+                            style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                      ],
+                    ),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Image.asset('assets/act.jpeg'),
-              ],
-            ),
-            SizedBox(height: 50),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Our Prominent Alumni',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 27,
+              ),
+              SizedBox(height: 20),
+              FlipCard(
+                front: Container(
+                  height: MediaQuery.of(context).size.height * 0.28,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.white,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/ambercard.png'),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(20.0),
+                  child: Center(
+                    child: Text(
+                      'Mission',
+                      style: GoogleFonts.montserrat(
+                        color: Colors.black,
+                        fontSize: 35,
+                      ),
+                    ),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
+                back: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18),
+                      color: Colors.blue.shade900,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 2),
+                        )
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            "To develop SVCE as a 'CENTRE OF EXCELLENCE' offering Engineering Education to men and women at undergraduate and postgraduate degree levels, bringing out their total personality, emphasising ethical values and preparing them to meet the growing challenges of the industry and diverse societal needs of our nation.",
+                            style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                      ],
+                    ),
+                  ),
                 ),
-                alumni_carousel,
-              ],
-            ),
-            SizedBox(height: 50),
-          ],
+              ),
+              SizedBox(height: 20),
+              FlipCard(
+                front: Container(
+                  height: MediaQuery.of(context).size.height * 0.28,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.white,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/ambercard.png'),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(20.0),
+                  child: Center(
+                    child: Text(
+                      'Quality Policy',
+                      style: GoogleFonts.montserrat(
+                        color: Colors.black,
+                        fontSize: 35,
+                      ),
+                    ),
+                  ),
+                ),
+                back: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18),
+                      color: Colors.blue.shade900,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 2),
+                        )
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            "To impart quality education in Science, Engineering and Technology, nurturing right attitudes towards scholarship, research and entrepreneurship, enabling students to meet the challenges of industry, including Standards of Training, Certification and Watch keeping (STCW) requirements, society and environment.",
+                            style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 300,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/achieve.jpeg'),
+                  ),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              SizedBox(height: 50),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Top Recruiters',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.montserrat(
+                      fontSize: 35,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  job_carousel,
+                ],
+              ),
+              SizedBox(height: 50),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Activities',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.montserrat(
+                      fontSize: 35,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                      padding: EdgeInsets.all(20),
+                      child: Image.asset('assets/act.jpeg')),
+                ],
+              ),
+              SizedBox(height: 50),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Our Prominent Alumni',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.montserrat(
+                      fontSize: 35,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  alumni_carousel,
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

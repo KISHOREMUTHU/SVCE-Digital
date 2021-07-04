@@ -31,7 +31,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     return Scaffold(
       body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavyBar(
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: Colors.amber[600],
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
             icon: Icon(Icons.home),
@@ -41,7 +41,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 fontSize: 15,
               ),
             ),
-            activeColor: Colors.orangeAccent,
+            activeColor: Colors.blue.shade900,
             inactiveColor: Colors.white,
           ),
           BottomNavyBarItem(
@@ -52,7 +52,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 fontSize: 15,
               ),
             ),
-            activeColor: Colors.orangeAccent,
+            activeColor: Colors.blue.shade900,
             inactiveColor: Colors.white,
           ),
           BottomNavyBarItem(
@@ -63,7 +63,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 fontSize: 15,
               ),
             ),
-            activeColor: Colors.orangeAccent,
+            activeColor: Colors.blue.shade900,
             inactiveColor: Colors.white,
           ),
           BottomNavyBarItem(
@@ -74,7 +74,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 fontSize: 15,
               ),
             ),
-            activeColor: Colors.orangeAccent,
+            activeColor: Colors.blue.shade900,
             inactiveColor: Colors.white,
           ),
           BottomNavyBarItem(
@@ -85,7 +85,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 fontSize: 15,
               ),
             ),
-            activeColor: Colors.orangeAccent,
+            activeColor: Colors.blue.shade900,
             inactiveColor: Colors.white,
           ),
         ],

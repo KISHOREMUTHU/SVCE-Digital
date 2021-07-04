@@ -12,41 +12,55 @@ class ActivityTile extends StatelessWidget {
       @required this.materialRoute});
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(15),
-      child: GridTile(
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (ctx) => (materialRoute is String)
-                        ? SizedBox.fromSize(
-                            size: Size(100, 1000),
-                            child: WebView(
-                              initialUrl: materialRoute,
-                              javascriptMode: JavascriptMode.unrestricted,
-                            ),
-                          )
-                        : materialRoute,
-                  ));
-            },
-            child: Image(image: AssetImage(imageAsset), fit: BoxFit.cover),
-          ),
-          footer: GridTileBar(
-            backgroundColor: Colors.black45,
-            title: Text(
-              text,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: .5,
-                  fontSize: 14,
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            spreadRadius: 1,
+            blurRadius: 1,
+            offset: Offset(0, 2),
+          )
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: GridTile(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) => (materialRoute is String)
+                          ? SizedBox.fromSize(
+                              size: Size(100, 1000),
+                              child: WebView(
+                                initialUrl: materialRoute,
+                                javascriptMode: JavascriptMode.unrestricted,
+                              ),
+                            )
+                          : materialRoute,
+                    ));
+              },
+              child: Image(image: AssetImage(imageAsset), fit: BoxFit.cover),
+            ),
+            footer: GridTileBar(
+              backgroundColor: Colors.black45,
+              title: Text(
+                text,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    color: Colors.white,
+                    letterSpacing: .5,
+                    fontSize: 14,
+                  ),
                 ),
               ),
-            ),
-          )),
+            )),
+      ),
     );
   }
 }
