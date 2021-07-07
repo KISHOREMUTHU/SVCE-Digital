@@ -3,15 +3,15 @@ import 'package:ease_the_error/chatbot/classes.dart';
 import 'package:ease_the_error/chatbot/cleanliness.dart';
 import 'package:ease_the_error/chatbot/lost_found.dart';
 import 'package:ease_the_error/chatbot/welcome.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'botcommands.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
 
   final String title;
 
@@ -203,6 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -210,6 +211,20 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Container(
+                  width: 37,
+                  height: 37,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+
+                    image: DecorationImage(
+                      image: AssetImage('assets/bot.jpeg'),
+                    ),
+                  ),
+                ),
+              ),
               Text(
                 "Ask Veronica",
                 style: TextStyle(
@@ -231,18 +246,13 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Container(
             constraints: BoxConstraints.expand(),
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/bground.png'),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                image: AssetImage('assets/activites_bg.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Column(
               children: <Widget>[
-                Container(
-                  padding: EdgeInsets.only(top: 15, bottom: 10),
-                  child: Text(
-                    "Today, ${DateFormat("Hm").format(DateTime.now())}",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
                 Flexible(
                     child: ListView.builder(
                         reverse: true,
@@ -251,65 +261,79 @@ class _MyHomePageState extends State<MyHomePage> {
                             messsages[index]["message"].toString(),
                             messsages[index]["data"]))),
                 SizedBox(
-                  height: 20,
-                ),
-                Divider(
-                  height: 5.0,
-                  color: Colors.blue[900],
+                  height: 10,
                 ),
                 Container(
-                  child: ListTile(
-                    title: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
-                        color: Colors.grey[400],
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
                       ),
-                      padding: EdgeInsets.only(left: 15),
-                      child: TextFormField(
-                        controller: messageInsert,
-                        decoration: InputDecoration(
-                          hintText: "Enter a Message...",
-                          contentPadding: EdgeInsets.only(bottom: 10.0),
-                          hintStyle: TextStyle(
-                            color: Colors.black45,
+                      Container(
+                        color: Colors.white,
+                        child: ListTile(
+                          title: Container(
+                            height: 45,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15)),
+                              color: Colors.grey[400],
+                            ),
+                            padding: EdgeInsets.only(left: 15),
+                            child: Center(
+                              child: TextFormField(
+                                controller: messageInsert,
+                                decoration: InputDecoration(
+                                  hintText: "Enter a Message...",
+                                  contentPadding: EdgeInsets.only(bottom: 10.0),
+                                  hintStyle: TextStyle(
+                                    color: Colors.black45,
+                                  ),
+                                  border: InputBorder.none,
+                                  focusedBorder: InputBorder.none,
+                                  enabledBorder: InputBorder.none,
+                                  errorBorder: InputBorder.none,
+                                  disabledBorder: InputBorder.none,
+                                ),
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                                onChanged: (value) {},
+                              ),
+                            ),
                           ),
-                          border: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          errorBorder: InputBorder.none,
-                          disabledBorder: InputBorder.none,
+                          trailing: IconButton(
+                              icon: Icon(
+                                Icons.send,
+                                size: 30.0,
+                                color: Colors.blue[900],
+                              ),
+                              onPressed: () {
+                                if (messageInsert.text.isEmpty) {
+                                  print("empty message");
+                                } else {
+                                  setState(() {
+                                    messsages.insert(0, {
+                                      "data": 1,
+                                      "message": messageInsert.text
+                                    });
+                                  });
+                                  response(messageInsert.text);
+                                  messageInsert.clear();
+                                }
+                                FocusScopeNode currentFocus =
+                                    FocusScope.of(context);
+                                if (!currentFocus.hasPrimaryFocus) {
+                                  currentFocus.unfocus();
+                                }
+                              }),
                         ),
-                        style: TextStyle(fontSize: 16, color: Colors.black),
-                        onChanged: (value) {},
                       ),
-                    ),
-                    trailing: IconButton(
-                        icon: Icon(
-                          Icons.send,
-                          size: 30.0,
-                          color: Colors.blue[900],
-                        ),
-                        onPressed: () {
-                          if (messageInsert.text.isEmpty) {
-                            print("empty message");
-                          } else {
-                            setState(() {
-                              messsages.insert(0,
-                                  {"data": 1, "message": messageInsert.text});
-                            });
-                            response(messageInsert.text);
-                            messageInsert.clear();
-                          }
-                          FocusScopeNode currentFocus = FocusScope.of(context);
-                          if (!currentFocus.hasPrimaryFocus) {
-                            currentFocus.unfocus();
-                          }
-                        }),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                    ],
                   ),
-                ),
-                SizedBox(
-                  height: 15.0,
                 )
               ],
             ),
@@ -328,36 +352,37 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           data == 0
               ? Container(
-                  height: 60,
-                  width: 60,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/bot.jpeg"),
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    image:
+                        DecorationImage(image: AssetImage("assets/bot.jpeg")),
                   ),
                 )
               : Container(),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Bubble(
-                radius: Radius.circular(15.0),
-                color: data == 0 ? Colors.blue[700] : Colors.tealAccent[700],
+                radius: Radius.circular(5.0),
+                color: data == 0 ? Colors.blue[900] : Colors.amber[600],
                 elevation: 0.0,
                 child: Padding(
                   padding: EdgeInsets.all(2.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      SizedBox(
-                        width: 10.0,
-                      ),
                       Flexible(
                           child: Container(
                         constraints: BoxConstraints(
-                          maxWidth: 230,
+                          maxWidth: MediaQuery.of(context).size.width * 0.67,
                         ),
                         child: Text(
                           message,
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.montserrat(
+                            color: data == 0 ? Colors.white : Colors.black,
+                            fontSize: 16,
+                          ),
                         ),
                       ))
                     ],
@@ -366,10 +391,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           data == 1
               ? Container(
-                  height: 60,
-                  width: 60,
+                  height: 40,
+                  width: 40,
                   child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/default.jpg"),
+                    backgroundImage: user.photoURL != null
+                        ? NetworkImage(user.photoURL)
+                        : AssetImage("assets/default.jpg"),
                   ),
                 )
               : Container(),
