@@ -34,11 +34,13 @@ class ActivityTile extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (ctx) => (materialRoute is String)
-                          ? SizedBox.fromSize(
-                              size: Size(100, 1000),
-                              child: WebView(
-                                initialUrl: materialRoute,
-                                javascriptMode: JavascriptMode.unrestricted,
+                          ? SafeArea(
+                              child: SizedBox.fromSize(
+                                size: Size(100, 1000),
+                                child: WebView(
+                                  initialUrl: materialRoute,
+                                  javascriptMode: JavascriptMode.unrestricted,
+                                ),
                               ),
                             )
                           : materialRoute,

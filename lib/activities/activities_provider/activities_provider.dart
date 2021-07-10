@@ -58,8 +58,7 @@ class ActivityProvider {
     ActivityItem(
         text: 'Student Council',
         asssetImage: 'assets/sa.jpeg',
-        materialRoute:
-            "https://www.svce.ac.in/research/office-of-the-dean-research/"),
+        materialRoute: "https://www.svce.ac.in/student-council/"),
   ];
 
   List<ActivityItem> get activitiesList {

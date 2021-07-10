@@ -1,7 +1,7 @@
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:ease_the_error/chatbot/start.dart';
 import 'package:ease_the_error/doubt_app/board.dart';
 import 'package:ease_the_error/google_sign_in.dart';
+import 'package:ease_the_error/profile/developers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,6 +10,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -117,25 +118,20 @@ class _HomeState extends State<Home> {
           child: ListView(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.30,
                 decoration: BoxDecoration(
                   color: Colors.amber,
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 300,
-                      height: 120,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/svce.png'),
-                        ),
-                      ),
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundColor: Colors.white,
+                      child: ClipOval(child: Image.network(user.photoURL)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20.0, 0, 0, 20),
+                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                       child: Text(
                         "Welcome !!!",
                         textAlign: TextAlign.start,
@@ -147,20 +143,24 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.7,
-                            child: Text(
-                              user.displayName,
-                              textAlign: TextAlign.start,
-                              style: GoogleFonts.montserrat(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                          padding: const EdgeInsets.all(20.0),
+                          child: Center(
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.7,
+                              child: Center(
+                                child: Text(
+                                  user.displayName,
+                                  textAlign: TextAlign.start,
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -171,7 +171,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.64,
+                height: MediaQuery.of(context).size.height * 0.74,
                 decoration: BoxDecoration(
                   color: Colors.blue[900],
                 ),
@@ -179,7 +179,19 @@ class _HomeState extends State<Home> {
                   children: [
                     InkWell(
                       onTap: () {
-                        _launchURL("https://www.svce.ac.in/");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SafeArea(
+                                child: SizedBox.fromSize(
+                                    size: Size(100, 1000),
+                                    child: WebView(
+                                      initialUrl: 'https://www.svce.ac.in/',
+                                      javascriptMode:
+                                          JavascriptMode.unrestricted,
+                                    )),
+                              ),
+                            ));
                       },
                       child: ListTile(
                         title: Text(
@@ -205,7 +217,20 @@ class _HomeState extends State<Home> {
                     ),
                     InkWell(
                       onTap: () {
-                        _launchURL("https://svce.mastersofterp.in/");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SafeArea(
+                                child: SizedBox.fromSize(
+                                    size: Size(100, 1000),
+                                    child: WebView(
+                                      initialUrl:
+                                          'https://svce.mastersofterp.in/',
+                                      javascriptMode:
+                                          JavascriptMode.unrestricted,
+                                    )),
+                              ),
+                            ));
                       },
                       child: ListTile(
                         title: Text(
@@ -216,35 +241,6 @@ class _HomeState extends State<Home> {
                         ),
                         leading: Icon(
                           Icons.person,
-                          color: Colors.white,
-                        ),
-                        trailing: Icon(Icons.arrow_right,
-                            color: Colors.white, size: 32),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Divider(
-                        color: Colors.white,
-                        thickness: 1,
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MyHomePage()));
-                      },
-                      child: ListTile(
-                        title: Text(
-                          'Ask Veronica',
-                          style: GoogleFonts.montserrat(
-                            color: Colors.white,
-                          ),
-                        ),
-                        leading: Icon(
-                          Icons.help,
                           color: Colors.white,
                         ),
                         trailing: Icon(Icons.arrow_right,
@@ -289,6 +285,74 @@ class _HomeState extends State<Home> {
                     ),
                     InkWell(
                       onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SafeArea(
+                                child: SizedBox.fromSize(
+                                    size: Size(100, 1000),
+                                    child: WebView(
+                                      initialUrl:
+                                          'https://www.svce.ac.in/contact-us/',
+                                      javascriptMode:
+                                          JavascriptMode.unrestricted,
+                                    )),
+                              ),
+                            ));
+                      },
+                      child: ListTile(
+                        title: Text(
+                          'Contact',
+                          style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                          ),
+                        ),
+                        leading: Icon(
+                          Icons.phone,
+                          color: Colors.white,
+                        ),
+                        trailing: Icon(Icons.arrow_right,
+                            color: Colors.white, size: 32),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Divider(
+                        color: Colors.white,
+                        thickness: 1,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DeveloperTeam()));
+                      },
+                      child: ListTile(
+                        title: Text(
+                          'Developer Info',
+                          style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                          ),
+                        ),
+                        leading: Icon(
+                          Icons.people_alt,
+                          color: Colors.white,
+                        ),
+                        trailing: Icon(Icons.arrow_right,
+                            color: Colors.white, size: 32),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Divider(
+                        color: Colors.white,
+                        thickness: 1,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
                         final provider = Provider.of<GoogleSignInProvider>(
                             context,
                             listen: false);
@@ -316,7 +380,7 @@ class _HomeState extends State<Home> {
                         thickness: 1,
                       ),
                     ),
-                    SizedBox(height: 25),
+                    SizedBox(height: 20),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -326,12 +390,12 @@ class _HomeState extends State<Home> {
                           textAlign: TextAlign.start,
                           style: GoogleFonts.montserrat(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 18,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -342,7 +406,7 @@ class _HomeState extends State<Home> {
                                 'https://www.linkedin.com/school/sri-venkateswara-college-of-engineering');
                           },
                           icon: Icon(FontAwesomeIcons.linkedin,
-                              color: Colors.white, size: 32),
+                              color: Colors.white, size: 26),
                         ),
                         SizedBox(width: 20),
                         IconButton(
@@ -353,7 +417,7 @@ class _HomeState extends State<Home> {
                           icon: Icon(
                             FontAwesomeIcons.instagram,
                             color: Colors.white,
-                            size: 32,
+                            size: 26,
                           ),
                         ),
                         SizedBox(width: 20),
@@ -362,7 +426,7 @@ class _HomeState extends State<Home> {
                             _launchURL('https://youtu.be/oCFQdzcog88');
                           },
                           icon: Icon(FontAwesomeIcons.youtube,
-                              color: Colors.white, size: 32),
+                              color: Colors.white, size: 26),
                         ),
                       ],
                     ),

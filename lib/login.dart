@@ -1,9 +1,11 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:ease_the_error/canteen/foods/start.dart';
 import 'package:ease_the_error/navbar_pages/activities.dart';
 import 'package:ease_the_error/navbar_pages/home.dart';
-import 'package:ease_the_error/navbar_pages/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'chatbot/start.dart';
 
 class LoginWidget extends StatefulWidget {
   @override
@@ -17,14 +19,14 @@ class _LoginWidgetState extends State<LoginWidget> {
     Icons.storage,
     Icons.location_on_sharp,
     Icons.brunch_dining,
-    Icons.person,
+    Icons.bolt,
   ];
   final tabs = [
     Home(),
     Activities(),
     Container(),
-    Container(),
-    Profile(),
+    Anime(),
+    MyChat(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -78,9 +80,9 @@ class _LoginWidgetState extends State<LoginWidget> {
             inactiveColor: Colors.white,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.bolt),
             title: Text(
-              'Profile',
+              'ChatBot',
               style: GoogleFonts.montserrat(
                 fontSize: 15,
               ),

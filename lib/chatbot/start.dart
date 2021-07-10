@@ -10,16 +10,16 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import 'botcommands.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyChat extends StatefulWidget {
+  MyChat({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyChatState createState() => _MyChatState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyChatState extends State<MyChat> {
   final messageInsert = TextEditingController();
   List<Map> messsages = [];
 
@@ -218,7 +218,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 37,
                   decoration: BoxDecoration(
                     color: Colors.white,
-
                     image: DecorationImage(
                       image: AssetImage('assets/bot.jpeg'),
                     ),
@@ -268,7 +267,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 10,
+                        height: 5,
                       ),
                       Container(
                         color: Colors.white,
@@ -330,7 +329,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       SizedBox(
-                        height: 10.0,
+                        height: 5.0,
                       ),
                     ],
                   ),
@@ -355,6 +354,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 40,
                   width: 40,
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
                     color: Colors.white,
                     image:
                         DecorationImage(image: AssetImage("assets/bot.jpeg")),

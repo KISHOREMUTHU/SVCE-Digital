@@ -1,6 +1,3 @@
-import 'package:ease_the_error/canteen/block_i.dart';
-import 'package:ease_the_error/canteen/block_v.dart';
-import 'package:ease_the_error/canteen/oat.dart';
 import 'package:flutter/material.dart';
 
 class Canteen extends StatefulWidget {
@@ -277,157 +274,137 @@ class _CanteenState extends State<Canteen> {
                   ),
                 ),
               ),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.push(context , MaterialPageRoute(builder : (context) => Oat()));
-                },
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-                  child: Container(
-                    width: 340,
-                    height: 90,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Container(
-                            child: CircleAvatar(
-                              radius: 35,
-                              backgroundImage:
-                                  AssetImage('assets/canteen.jpeg'),
-                            ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: Container(
+                  width: 340,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Container(
+                          child: CircleAvatar(
+                            radius: 35,
+                            backgroundImage: AssetImage('assets/canteen.jpeg'),
                           ),
                         ),
-                        SizedBox(width: 60),
-                        Padding(
-                          padding: const EdgeInsets.all(30.0),
-                          child: Center(
-                              child: Text(
-                            '  OAT  ',
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          )),
-                        ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(width: 60),
+                      Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: Center(
+                            child: Text(
+                          '  OAT  ',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        )),
+                      ),
+                    ],
                   ),
                 ),
               ),
               SizedBox(height: 25),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.push(context , MaterialPageRoute(builder : (context) => FirstBlock()));
-
-                },
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-                  child: Container(
-                    width: 340,
-                    height: 90,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Container(
-                            child: CircleAvatar(
-                              radius: 35,
-                              backgroundImage:
-                                  AssetImage('assets/canteen.jpeg'),
-                            ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: Container(
+                  width: 340,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Container(
+                          child: CircleAvatar(
+                            radius: 35,
+                            backgroundImage: AssetImage('assets/canteen.jpeg'),
                           ),
                         ),
-                        SizedBox(width: 60),
-                        Padding(
-                          padding: const EdgeInsets.all(30.0),
-                          child: Center(
-                              child: Text(
-                            'Block V',
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          )),
-                        ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(width: 60),
+                      Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: Center(
+                            child: Text(
+                          'Block V',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        )),
+                      ),
+                    ],
                   ),
                 ),
               ),
               SizedBox(height: 25),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.push(context , MaterialPageRoute(builder : (context) => FifthBlock()));
-
-                },
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-                  child: Container(
-                    width: 340,
-                    height: 90,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Container(
-                            child: CircleAvatar(
-                              radius: 35,
-                              backgroundImage:
-                                  AssetImage('assets/canteen.jpeg'),
-                            ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: Container(
+                  width: 340,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 1,
+                        blurRadius: 1,
+                        offset: Offset(0, 2),
+                      )
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Container(
+                          child: CircleAvatar(
+                            radius: 35,
+                            backgroundImage: AssetImage('assets/canteen.jpeg'),
                           ),
                         ),
-                        SizedBox(width: 60),
-                        Padding(
-                          padding: const EdgeInsets.all(30.0),
-                          child: Center(
-                              child: Text(
-                            'Block I',
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          )),
-                        ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(width: 60),
+                      Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: Center(
+                            child: Text(
+                          'Block I',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        )),
+                      ),
+                    ],
                   ),
                 ),
               ),
