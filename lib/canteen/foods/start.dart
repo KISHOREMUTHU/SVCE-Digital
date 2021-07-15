@@ -138,12 +138,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
+                    padding: const EdgeInsets.only(right: 15.0),
                     child: Container(
-                      width: 100,
-                      height: 100,
+                      width: 90,
+                      height: 90,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
+                        borderRadius: BorderRadius.circular(45),
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(post['path']),
@@ -324,12 +324,12 @@ class _BlockVPageState extends State<BlockVPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
+                    padding: const EdgeInsets.only(right: 15.0),
                     child: Container(
-                      width: 100,
-                      height: 100,
+                      width: 90,
+                      height: 90,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
+                        borderRadius: BorderRadius.circular(45),
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(post['path']),
@@ -373,7 +373,7 @@ class _BlockVPageState extends State<BlockVPage> {
           backgroundColor: Colors.blue.shade900,
           iconTheme: IconThemeData(color: Colors.white),
           title: Text(
-            'Block V Canteen Foods',
+            'Block V - Food Court ',
             style: GoogleFonts.montserrat(
               color: Colors.white,
             ),
@@ -487,7 +487,9 @@ class _CCDPageState extends State<CCDPage> {
                           child: Text(
                             post["food"],
                             style: GoogleFonts.montserrat(
-                                fontSize: 22, fontWeight: FontWeight.bold),
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         SizedBox(height: 5),
@@ -510,12 +512,12 @@ class _CCDPageState extends State<CCDPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
+                    padding: const EdgeInsets.only(right: 10.0),
                     child: Container(
-                      width: 100,
-                      height: 100,
+                      width: 90,
+                      height: 90,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
+                        borderRadius: BorderRadius.circular(45),
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(post['path']),
@@ -559,7 +561,7 @@ class _CCDPageState extends State<CCDPage> {
           backgroundColor: Colors.blue.shade900,
           iconTheme: IconThemeData(color: Colors.white),
           title: Text(
-            'Cafe Coffee Day Foods',
+            'Cafe Coffee Day',
             style: GoogleFonts.montserrat(
               color: Colors.white,
             ),
@@ -665,24 +667,27 @@ class _CategoriesScrollerState extends State<CategoriesScroller> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.fromLTRB(15, 20, 5, 20),
                           child: Center(
-                            child: Text(
-                              'Main Canteen',
-                              style: GoogleFonts.montserrat(
-                                fontSize: 18,
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              child: Text(
+                                'Main Canteen',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.fromLTRB(5, 10, 10, 10),
                           child: Center(
                             child: Container(
-                              width: 75,
-                              height: 75,
+                              width: 80,
+                              height: 80,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(37.5),
+                                borderRadius: BorderRadius.circular(40),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
                                   image: AssetImage('assets/canteen.jpeg'),
@@ -719,27 +724,31 @@ class _CategoriesScrollerState extends State<CategoriesScroller> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.fromLTRB(15, 20, 5, 20),
                           child: Center(
-                            child: Text(
-                              'Block V - ChillOut',
-                              style: GoogleFonts.montserrat(
-                                fontSize: 18,
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              child: Text(
+                                'Block V - FoodCourt',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.fromLTRB(5, 10, 10, 10),
                           child: Center(
                             child: Container(
-                              width: 75,
-                              height: 75,
+                              width: 80,
+                              height: 80,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(37.5),
+                                borderRadius: BorderRadius.circular(40),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: AssetImage('assets/canteen.jpeg'),
+                                  image:
+                                      AssetImage('assets/route/chillout.png'),
                                 ),
                               ),
                             ),
@@ -773,27 +782,30 @@ class _CategoriesScrollerState extends State<CategoriesScroller> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.fromLTRB(15, 20, 5, 20),
                           child: Center(
-                            child: Text(
-                              'Cafe Coffee Day',
-                              style: GoogleFonts.montserrat(
-                                fontSize: 18,
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              child: Text(
+                                'Cafe Coffee Day',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.fromLTRB(5, 10, 10, 10),
                           child: Center(
                             child: Container(
-                              width: 75,
-                              height: 75,
+                              width: 80,
+                              height: 80,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(37.5),
+                                borderRadius: BorderRadius.circular(40),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: AssetImage('assets/canteen.jpeg'),
+                                  image: AssetImage('assets/route/ccd.png'),
                                 ),
                               ),
                             ),
@@ -992,12 +1004,12 @@ class HospitalSearch extends SearchDelegate<FoodItem> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 20.0),
+                            padding: const EdgeInsets.only(right: 15.0),
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 90,
+                              height: 90,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
+                                borderRadius: BorderRadius.circular(45),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
                                   image: AssetImage(listItem.path),
@@ -1134,12 +1146,12 @@ class BlockVSearch extends SearchDelegate<FoodItem> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 20.0),
+                            padding: const EdgeInsets.only(right: 15.0),
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 90,
+                              height: 90,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
+                                borderRadius: BorderRadius.circular(45),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
                                   image: AssetImage(listItem.path),
@@ -1276,12 +1288,12 @@ class CCDSearch extends SearchDelegate<FoodItem> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 20.0),
+                            padding: const EdgeInsets.only(right: 15.0),
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 90,
+                              height: 90,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
+                                borderRadius: BorderRadius.circular(45),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
                                   image: AssetImage(listItem.path),

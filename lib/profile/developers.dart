@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DeveloperTeam extends StatefulWidget {
   @override
@@ -11,16 +12,16 @@ class _DeveloperTeamState extends State<DeveloperTeam> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Colors.blue.shade900,
         title: Text(
           'Developer Team',
-          style: TextStyle(
-            color: Colors.black,
+          style: GoogleFonts.montserrat(
+            color: Colors.white,
           ),
         ),
       ),
       body: Container(
-        //  constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,

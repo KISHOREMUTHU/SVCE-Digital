@@ -2,6 +2,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:ease_the_error/canteen/foods/start.dart';
 import 'package:ease_the_error/navbar_pages/activities.dart';
 import 'package:ease_the_error/navbar_pages/home.dart';
+import 'package:ease_the_error/navbar_pages/navigate.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,7 +25,7 @@ class _LoginWidgetState extends State<LoginWidget> {
   final tabs = [
     Home(),
     Activities(),
-    Container(),
+    NavigationRoutes(),
     Anime(),
     MyChat(),
   ];

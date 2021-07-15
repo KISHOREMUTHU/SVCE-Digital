@@ -77,16 +77,16 @@ class _HomeState extends State<Home> {
         ),
       ));
   Widget alumni_carousel = new Container(
-    height: 500.0,
+    height: 310.0,
     child: new Carousel(
       boxFit: BoxFit.cover,
       images: [
-        AssetImage("assets/al1.jpeg"),
-        AssetImage("assets/al2.jpeg"),
-        AssetImage("assets/al3.jpeg"),
-        AssetImage("assets/al4.jpeg"),
-        AssetImage("assets/al5.jpeg"),
-        AssetImage("assets/al6.jpeg"),
+        AssetImage("assets/al1.jpg"),
+        AssetImage("assets/al2.jpg"),
+        AssetImage("assets/al3.jpg"),
+        AssetImage("assets/al4.jpg"),
+        AssetImage("assets/al5.jpg"),
+        AssetImage("assets/al6.jpg"),
       ],
       autoplay: true,
       dotSize: 4.0,
@@ -179,19 +179,7 @@ class _HomeState extends State<Home> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SafeArea(
-                                child: SizedBox.fromSize(
-                                    size: Size(100, 1000),
-                                    child: WebView(
-                                      initialUrl: 'https://www.svce.ac.in/',
-                                      javascriptMode:
-                                          JavascriptMode.unrestricted,
-                                    )),
-                              ),
-                            ));
+                        _launchURL('https://www.svce.ac.in/');
                       },
                       child: ListTile(
                         title: Text(
@@ -217,20 +205,7 @@ class _HomeState extends State<Home> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SafeArea(
-                                child: SizedBox.fromSize(
-                                    size: Size(100, 1000),
-                                    child: WebView(
-                                      initialUrl:
-                                          'https://svce.mastersofterp.in/',
-                                      javascriptMode:
-                                          JavascriptMode.unrestricted,
-                                    )),
-                              ),
-                            ));
+                        _launchURL('https://svce.mastersofterp.in/');
                       },
                       child: ListTile(
                         title: Text(
@@ -699,7 +674,7 @@ class _HomeState extends State<Home> {
                         child: Image.asset('assets/act.jpeg')),
                   ],
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: 30),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -712,7 +687,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 50,
                     ),
                     alumni_carousel,
                   ],

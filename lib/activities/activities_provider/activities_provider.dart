@@ -65,4 +65,4 @@ class ActivityProvider {
     return [..._activitiesList];
   }
 }
-// ActivityItem('Academics','assets/academics.jpeg', navigateToAcademic(context)
+

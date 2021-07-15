@@ -46,6 +46,7 @@ dependencies:
   google_fonts: ^2.1.0
   bottom_navy_bar: ^6.0.0
   flip_card: ^0.5.0
+  page_transition: ^2.0.2
 
 
 dev_dependencies:
@@ -81,12 +82,12 @@ flutter:
     - assets/emp1.jpeg
     - assets/emp2.jpeg
     - assets/emp3.jpeg
-    - assets/al1.jpeg
-    - assets/al2.jpeg
-    - assets/al3.jpeg
-    - assets/al4.jpeg
-    - assets/al5.jpeg
-    - assets/al6.jpeg
+    - assets/al1.jpg
+    - assets/al2.jpg
+    - assets/al3.jpg
+    - assets/al4.jpg
+    - assets/al5.jpg
+    - assets/al6.jpg
     - assets/emp5.jpeg
     - assets/act.jpeg
     - assets/emp.jpeg
@@ -165,6 +166,172 @@ flutter:
     - assets/food_bg.png
     - assets/paytm.png
     - assets/gpay.png
+    - assets/route/busparking.png
+    - assets/route/carparking.png
+    - assets/route/cricketground.png
+    - assets/route/ground.png
+    - assets/route/hostel.png
+    - assets/route/ccd.png
+    - assets/route/library.png
+    - assets/route/temple.png
+    - assets/route/swimmingpool.png
+    - assets/route/block.png
+
+    - assets/route/auto.png
+    - assets/route/biotech.png
+    - assets/route/chem.png
+
+    - assets/route/oat.jpg
+
+    - assets/route/substation.png
+    - assets/route/pond.png
+    - assets/route/chillout.png
+
+    - assets/route/mph.png
+    - assets/vegpuff.png
+    - assets/paneerpuff.png
+    - assets/mushroompuffs.png
+    - assets/samosa.png
+    - assets/kadaipaneerwraproll.png
+    - assets/chocodoughnut.png
+    - assets/walnutbrownie.png
+    - assets/walnutbrowniewithicecream.png
+    - assets/kesarpistakulfi.png
+    - assets/matkakulfi.png
+    - assets/pineapplecreambun.png
+    - assets/strawberrycreambun.png
+    - assets/paneertikkasandwich.png
+    - assets/cheesesandwich.png
+    - assets/blackforestpastry.png
+    - assets/vanillapastry.png
+    - assets/pineapplepastry.png
+    - assets/strawberrypastry.png
+    - assets/blueberrypastry.png
+    - assets/chocofantasy.png
+    - assets/lemonsoda.png
+    - assets/cola.png
+    - assets/blueberrysoda.png
+    - assets/orangesoda.png
+    - assets/fruitale.png
+    - assets/kalakata.png
+    - assets/jaljeera.png
+    - assets/mangosoda.png
+    - assets/strawberrysoda.png
+    - assets/hotchillsoda.png
+    - assets/chocolateshake.png
+    - assets/mangoshake.png
+    - assets/strawberryshake.png
+    - assets/vanillashake.png
+    - assets/blackcurrantshake.png
+    - assets/pineapplecrusher.png
+    - assets/strawberrycrusher.png
+    - assets/lycheecrusher.png
+    - assets/kiwicrusher.png
+    - assets/blackcurrantshake.png
+    - assets/orangecrusher.png
+    - assets/coldcoffeecrusher.png
+    - assets/chocolatecrusher.png
+    - assets/kesarelaichicrusher.png
+    - assets/butterscotchcrusher.png
+    - assets/figcrusher.png
+    - assets/alphonsocrusher.png
+    - assets/espresso.png
+    - assets/americano.png
+    - assets/cappucino.png
+    - assets/cafelatte.png
+    - assets/cafemocha.png
+    - assets/vanillacuppucino.png
+    - assets/garamchai.png
+    - assets/masalchai.png
+    - assets/gingerchai.png
+    - assets/hotlemonchai.png
+    - assets/cardamomchai.png
+    - assets/horlicks.png
+    - assets/boost.png
+    - assets/badammilk.png
+    - assets/eskimocoffee.png
+    - assets/tropicalmoksha.png
+    - assets/lemonicetea.png
+    - assets/flavoredchocolatemoksha.png
+    - assets/flavoredcoldchoco.png
+    - assets/orangillo.png
+    - assets/guavafreeze.png
+    - assets/chococookieslush.png
+    - assets/jaljeeraslush.png
+    - assets/freshlemonslush.png
+    - assets/creamytomatosoup.png
+    - assets/sweetcornsoup.png
+    - assets/tomyumsoup.png
+
+    - assets/pongal.png
+    - assets/vada.png
+    - assets/idly.png
+    - assets/poori.png
+    - assets/dosa.png
+    - assets/meals.png
+    - assets/sambarrice.png
+    - assets/brinjirice.png
+    - assets/friedrice.png
+    - assets/tomatorice.png
+    - assets/coconutrice.png
+    - assets/puthinarice.png
+    - assets/corianderrice.png
+    - assets/curdrice.png
+    - assets/cholapoori.png
+    - assets/chappathi.png
+    - assets/parotta.png
+    - assets/bonda.png
+    - assets/bajji.png
+    - assets/masalvada.png
+    - assets/miniidlysambar.png
+    - assets/sambarvada.png
+
+    - assets/karasev.png
+    - assets/kaarabhoodi.png
+    - assets/vegroll.png
+    - assets/samosa.png
+    - assets/vegpuff.png
+    - assets/tea.png
+    - assets/coffee.png
+    - assets/hotmilk.png
+    - assets/dairymilk.png
+    - assets/fivestar.png
+    - assets/perk.png
+
+
+    - assets/snickers.png
+    - assets/parle.png
+    - assets/parlechocopie.png
+    - assets/oreo.png
+    - assets/hideandseek.png
+    - assets/parlemilano.png
+    - assets/milkbikis.png
+    - assets/mariegold.png
+    - assets/5050.png
+    - assets/treat.png
+    - assets/goodday.png
+    - assets/bourbon.png
+    - assets/britaniacake.png
+    - assets/jimjam.png
+    - assets/cornpuffs.png
+    - assets/lays.png
+    - assets/appy.png
+    - assets/frootis.png
+    - assets/appyfizz.png
+    - assets/frooti.png
+    - assets/cubacafe.png
+    - assets/tropicana.png
+    - assets/milkshake.png
+    - assets/zerocoke.png
+    - assets/thumbsup.png
+    - assets/tincoke.png
+    - assets/sprite.png
+    - assets/pulpyorange.png
+    - assets/mineralwater.png
+
+
+
+
 
 
 
