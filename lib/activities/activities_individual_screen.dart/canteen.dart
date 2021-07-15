@@ -1,4 +1,6 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Canteen extends StatefulWidget {
   @override
@@ -8,50 +10,33 @@ class Canteen extends StatefulWidget {
 class _CanteenState extends State<Canteen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.blue.shade900),
+          backgroundColor: Colors.amber,
+          title: Text(
+            'Canteen',
+            style: GoogleFonts.montserrat(color: Colors.blue.shade900),
+          ),
+        ),
+        body: Container(
+            child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 50),
               Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'Canteen',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 27,
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  "Let's have a look into our canteen !!!",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-              Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Container(
-                  width: 360,
-                  height: 130,
+                  width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, 2),
-                      )
+                          color: Colors.black.withAlpha(100), blurRadius: 10.0),
                     ],
                   ),
                   child: Column(
@@ -62,19 +47,20 @@ class _CanteenState extends State<Canteen> {
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
                           'To a man with an empty stomach food is God',
-                          style: TextStyle(
-                            fontSize: 18,
+                          style: GoogleFonts.montserrat(
+                            fontSize: 20,
                           ),
                         ),
                       ),
                       SizedBox(height: 10),
                       Text(
                         " – Mahatma Gandhi",
-                        style: TextStyle(
-                          fontSize: 15,
+                        style: GoogleFonts.montserrat(
+                          fontSize: 17,
                           color: Colors.grey,
                         ),
                       ),
+                      SizedBox(height: 10),
                     ],
                   ),
                 ),
@@ -84,67 +70,93 @@ class _CanteenState extends State<Canteen> {
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
                   "It has been a wonderful journey for the college canteen. From a ten by ten room with tinned roof to a two storey building spanning 340 sq mt. From catering to about 50 in its birth year (1985 ) to an almost 1000 (2015), and still counting …",
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     color: Colors.black,
                     fontSize: 16,
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Container(
-                  width: 400,
-                  height: 300,
+              SizedBox(height: 30),
+              FlipCard(
+                front: Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 280,
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withAlpha(100), blurRadius: 10.0),
+                    ],
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/ambercard.png'),
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Time Table',
+                      style: GoogleFonts.montserrat(fontSize: 30),
+                    ),
+                  ),
+                ),
+                back: Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 280,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withAlpha(100), blurRadius: 10.0),
+                    ],
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(40),
                     image: DecorationImage(
+                      fit: BoxFit.fill,
                       image: AssetImage('assets/can1.jpeg'),
                     ),
                   ),
                 ),
               ),
+              SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'Canteen Committee',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 27,
-                    color: Colors.blue,
+                child: Center(
+                  child: Text(
+                    'Canteen Committee',
+                    style: GoogleFonts.montserrat(
+                      fontSize: 27,
+                      color: Colors.blue.shade900,
+                    ),
                   ),
                 ),
               ),
+              SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Container(
-                  width: 340,
-                  height: 120,
+                  width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, 2),
-                      )
+                          color: Colors.black.withAlpha(100), blurRadius: 10.0),
                     ],
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      SizedBox(height: 20),
                       Text(
                         'Dr S.Ganesh Vaidhyanathan',
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: 18,
                         ),
                       ),
                       SizedBox(height: 10),
                       Text(
                         "Principal",
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: 15,
                           color: Colors.black,
                         ),
@@ -152,11 +164,12 @@ class _CanteenState extends State<Canteen> {
                       SizedBox(height: 10),
                       Text(
                         "President",
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: 15,
                           color: Colors.grey,
                         ),
                       ),
+                      SizedBox(height: 20)
                     ],
                   ),
                 ),
@@ -165,34 +178,30 @@ class _CanteenState extends State<Canteen> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Container(
-                  width: 340,
-                  height: 120,
+                  width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, 2),
-                      )
+                          color: Colors.black.withAlpha(100), blurRadius: 10.0),
                     ],
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      SizedBox(height: 20),
                       Text(
                         'Dr G.Devasakayam',
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: 18,
                         ),
                       ),
                       SizedBox(height: 10),
                       Text(
-                        "Head,ACH",
-                        style: TextStyle(
+                        "Head , ACH",
+                        style: GoogleFonts.montserrat(
                           fontSize: 15,
                           color: Colors.black,
                         ),
@@ -200,11 +209,12 @@ class _CanteenState extends State<Canteen> {
                       SizedBox(height: 10),
                       Text(
                         "Officer In-charge",
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: 15,
                           color: Colors.grey,
                         ),
                       ),
+                      SizedBox(height: 20)
                     ],
                   ),
                 ),
@@ -213,8 +223,102 @@ class _CanteenState extends State<Canteen> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Container(
-                  width: 340,
-                  height: 90,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withAlpha(100), blurRadius: 10.0),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 20),
+                      Text(
+                        'Mr M.Sethumadhavan',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 18,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Manager",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 15,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 60),
+              FlipCard(
+                front: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 320,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
+                      ],
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/ambercard.png'),
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Members And Staff',
+                        style: GoogleFonts.montserrat(fontSize: 27),
+                      ),
+                    ),
+                  ),
+                ),
+                back: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: 320,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
+                      ],
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage('assets/can2.jpg'),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  'Our Canteens',
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.montserrat(
+                    fontSize: 27,
+                    color: Colors.blue.shade900,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: Colors.white,
@@ -228,57 +332,50 @@ class _CanteenState extends State<Canteen> {
                     ],
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Mr M.Sethumadhavan',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Center(
+                              child: Container(
+                                child: CircleAvatar(
+                                  radius: 35,
+                                  backgroundImage:
+                                      AssetImage('assets/canteen.jpeg'),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(30.0, 20, 20, 20),
+                            child: Center(
+                                child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.42,
+                              child: Text(
+                                'Main Canteen',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            )),
+                          ),
+                        ],
                       ),
                       SizedBox(height: 10),
-                      Text(
-                        "Manager",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.grey,
-                        ),
-                      ),
                     ],
                   ),
                 ),
               ),
               SizedBox(height: 25),
               Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Container(
-                  width: 400,
-                  height: 350,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    image: DecorationImage(
-                      image: AssetImage('assets/can2.jpg'),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'Our Canteens',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 27,
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Container(
-                  width: 340,
-                  height: 90,
+                  width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: Colors.white,
@@ -291,29 +388,41 @@ class _CanteenState extends State<Canteen> {
                       )
                     ],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  child: Column(
                     children: [
-                      Center(
-                        child: Container(
-                          child: CircleAvatar(
-                            radius: 35,
-                            backgroundImage: AssetImage('assets/canteen.jpeg'),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Center(
+                              child: Container(
+                                child: CircleAvatar(
+                                  radius: 35,
+                                  backgroundImage:
+                                      AssetImage('assets/route/ccd.png'),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      SizedBox(width: 60),
-                      Padding(
-                        padding: const EdgeInsets.all(30.0),
-                        child: Center(
-                            child: Text(
-                          '  OAT  ',
-                          style: TextStyle(
-                            fontSize: 20,
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Center(
+                                child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.42,
+                              child: Text(
+                                'Cafe Coffee Day',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            )),
                           ),
-                        )),
+                        ],
                       ),
+                      SizedBox(height: 10),
                     ],
                   ),
                 ),
@@ -322,8 +431,7 @@ class _CanteenState extends State<Canteen> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Container(
-                  width: 340,
-                  height: 90,
+                  width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: Colors.white,
@@ -336,74 +444,42 @@ class _CanteenState extends State<Canteen> {
                       )
                     ],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  child: Column(
                     children: [
-                      Center(
-                        child: Container(
-                          child: CircleAvatar(
-                            radius: 35,
-                            backgroundImage: AssetImage('assets/canteen.jpeg'),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Center(
+                              child: Container(
+                                child: CircleAvatar(
+                                  radius: 35,
+                                  backgroundImage:
+                                      AssetImage('assets/route/chillout.png'),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      SizedBox(width: 60),
-                      Padding(
-                        padding: const EdgeInsets.all(30.0),
-                        child: Center(
-                            child: Text(
-                          'Block V',
-                          style: TextStyle(
-                            fontSize: 20,
+                          SizedBox(width: 20),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Center(
+                                child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.42,
+                              child: Text(
+                                'Block V - FoodCourt',
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            )),
                           ),
-                        )),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 25),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-                child: Container(
-                  width: 340,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 1,
-                        blurRadius: 1,
-                        offset: Offset(0, 2),
-                      )
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Center(
-                        child: Container(
-                          child: CircleAvatar(
-                            radius: 35,
-                            backgroundImage: AssetImage('assets/canteen.jpeg'),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 60),
-                      Padding(
-                        padding: const EdgeInsets.all(30.0),
-                        child: Center(
-                            child: Text(
-                          'Block I',
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                        )),
-                      ),
+                      SizedBox(height: 10)
                     ],
                   ),
                 ),
@@ -411,7 +487,7 @@ class _CanteenState extends State<Canteen> {
               SizedBox(height: 50),
             ],
           ),
-        ),
+        )),
       ),
     );
   }

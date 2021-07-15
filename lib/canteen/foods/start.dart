@@ -98,7 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 boxShadow: [
                   BoxShadow(
                       color: Colors.black.withAlpha(100), blurRadius: 10.0),
-                ]),
+                ]
+            ),
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
@@ -661,7 +662,8 @@ class _CategoriesScrollerState extends State<CategoriesScroller> {
                           BoxShadow(
                               color: Colors.black.withAlpha(100),
                               blurRadius: 10.0),
-                        ]),
+                        ]
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
