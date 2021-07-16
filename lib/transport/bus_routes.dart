@@ -1,3 +1,4 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -340,43 +341,45 @@ class _BusRoutesState extends State<BusRoutes> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
-        iconTheme: IconThemeData(color: Colors.white),
-        actions: [
-          IconButton(
-              onPressed: () {
-                showSearch(context: context, delegate: TransportDelegate());
-              },
-              icon: Icon(Icons.search)),
-        ],
-        title: Text(
-          'Bus Routes',
-          style: GoogleFonts.montserrat(
-            color: Colors.white,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue.shade900,
+          iconTheme: IconThemeData(color: Colors.white),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  showSearch(context: context, delegate: TransportDelegate());
+                },
+                icon: Icon(Icons.search)),
+          ],
+          title: Text(
+            'Bus Routes',
+            style: GoogleFonts.montserrat(
+              color: Colors.white,
+            ),
           ),
         ),
-      ),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage('assets/activites_bg.png'),
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/activites_bg.png'),
+            ),
           ),
-        ),
-        child: ListView.builder(
-          itemCount: bus_routes.length,
-          itemBuilder: (BuildContext context, int index) {
-            return SingleBus(
-              route: bus_routes[index]['Route No'].toString(),
-              city: bus_routes[index]['Bus Route'],
-              start_time: bus_routes[index]['Starting Point'].toString(),
-              via: bus_routes[index]['Via'],
-              //  image: oatList[index]['path'],
-            );
-          },
+          child: ListView.builder(
+            itemCount: bus_routes.length,
+            itemBuilder: (BuildContext context, int index) {
+              return SingleBus(
+                route: bus_routes[index]['Route No'].toString(),
+                city: bus_routes[index]['Bus Route'],
+                start_time: bus_routes[index]['Starting Point'].toString(),
+                via: bus_routes[index]['Via'],
+                //  image: oatList[index]['path'],
+              );
+            },
+          ),
         ),
       ),
     );
@@ -509,173 +512,195 @@ class PorductDetails extends StatefulWidget {
 class _PorductDetailsState extends State<PorductDetails> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+        child: Scaffold(
       appBar: AppBar(
-        title: Text(widget.city),
-        backgroundColor: Colors.green,
+        title: Text(
+          widget.city,
+          style: GoogleFonts.montserrat(),
+        ),
+        backgroundColor: Colors.amberAccent,
       ),
-      body: ListView(
-        children: [
-          new Container(
-            height: 300,
-            child: GridTile(
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage('assets/activites_bg.png'),
+          ),
+        ),
+        child: ListView(
+          children: [
+            new Container(
+              width: MediaQuery.of(context).size.width * 0.6,
+              height: 250,
+              child: GridTile(
+                child: Container(
+                    color: Colors.white, child: Image.asset('assets/bus.jpeg')),
+              ),
+            ),
+            SingleChildScrollView(
               child: Container(
-                  color: Colors.white, child: Image.asset('assets/bus.jpeg')),
-              footer: new Container(
-                color: Colors.white70,
-                child: ListTile(
-                  leading: Text(
-                    widget.start_time,
-                    style: TextStyle(
-                      fontFamily: 'Tinos',
-                      fontSize: 20,
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text(
+                            'Bus Route      ',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.43,
+                            child: Text(
+                              widget.city,
+                              style: GoogleFonts.montserrat(
+                                color: Colors.blue.shade900,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text(
+                            'Route No         ',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.43,
+                            child: Text(
+                              widget.route,
+                              style: GoogleFonts.montserrat(
+                                color: Colors.blue.shade900,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(15),
+                          child: Text(
+                            'Start Time ',
+                            style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(15),
+                          child: Container(
+                            child: Padding(
+                              padding: const EdgeInsets.all(15),
+                              child: SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.43,
+                                child: Text(
+                                  widget.start_time,
+                                  softWrap: true,
+                                  overflow: TextOverflow.fade,
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.blue.shade900,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    FlipCard(
+                      front: Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: 300,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withAlpha(100),
+                                blurRadius: 10.0),
+                          ],
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/ambercard.png'),
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Via',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 30,
+                            ),
+                          ),
+                        ),
+                      ),
+                      back: Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.blue.shade900,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withAlpha(100),
+                                blurRadius: 10.0),
+                          ],
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 20),
+                            Center(
+                              child: SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.8,
+                                child: Text(
+                                  widget.via,
+                                  style: GoogleFonts.montserrat(
+                                      color: Colors.white, fontSize: 18),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 50),
+                  ],
                 ),
               ),
             ),
-          ),
-          Divider(),
-          SingleChildScrollView(
-            child: Container(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Divider(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Bus Route           ',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          widget.city,
-                          style: TextStyle(
-                            color: Colors.grey[700],
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Route No                 ',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          widget.route,
-                          style: TextStyle(
-                            color: Colors.grey[700],
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Start Time ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 220,
-                          // direction: Axis.vertical,
-                          //fit : FlexFit.tight,
-                          // fit : FlexFit.loose,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              widget.start_time,
-                              softWrap: true,
-                              overflow: TextOverflow.fade,
-                              style: TextStyle(
-                                color: Colors.grey[700],
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Via          ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 220,
-                          // direction: Axis.vertical,
-                          //fit : FlexFit.tight,
-                          // fit : FlexFit.loose,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              widget.via,
-                              softWrap: true,
-                              overflow: TextOverflow.fade,
-                              style: TextStyle(
-                                color: Colors.grey[700],
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 50),
-                ],
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
-    );
+    ));
   }
 }
 

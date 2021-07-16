@@ -161,7 +161,7 @@ const maps = [
   },
   {
     "sl. no": 27,
-    "location": "IT Dept. Block",
+    "location": "IT and HSS Dept. Block",
     "image ": "assets\/route\/block.png",
     "link": "https:\/\/maps.app.goo.gl\/nHn1R2ekDp3WZipV8"
   },
