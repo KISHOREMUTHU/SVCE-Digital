@@ -3,6 +3,7 @@ import 'package:ease_the_error/doubt_app/customcard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BoardApp extends StatefulWidget {
   @override
@@ -28,34 +29,44 @@ class _BoardAppState extends State<BoardApp> {
             );
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Colors.amber,
         title: Text(
           'Sticky Notes',
-          style: TextStyle(
-            color: Colors.black,
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
         onPressed: () {
           _showDialog(context);
         },
-        child: Icon(FontAwesomeIcons.pen),
+        child: Icon(FontAwesomeIcons.pen, color: Colors.amber),
       ),
-      body: StreamBuilder(
-        stream: firestoreDb,
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return CircularProgressIndicator();
-          } else {
-            return ListView.builder(
-                itemCount: snapshot.data.docs.length,
-                itemBuilder: (context, index) {
-                  //return Text(snapshot.data.docs[index]['title']);
-                  return CustomCard(snapshot: snapshot.data, index: index);
-                });
-          }
-        },
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.fill, image: AssetImage('assets/activites_bg.png')),
+        ),
+        child: StreamBuilder(
+          stream: firestoreDb,
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return SizedBox();
+            } else {
+              return ListView.builder(
+                  itemCount: snapshot.data.docs.length,
+                  itemBuilder: (context, index) {
+                    
+                    return CustomCard(snapshot: snapshot.data, index: index);
+                  });
+            }
+          },
+        ),
       ),
     );
   }

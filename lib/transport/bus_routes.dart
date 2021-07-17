@@ -417,11 +417,8 @@ class SingleBus extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey,
-                spreadRadius: 1,
-                blurRadius: 1,
-                offset: Offset(0, 2),
-              )
+                  color: Colors.black.withAlpha(100),
+                  blurRadius: 10.0),
             ],
           ),
           child: Padding(
@@ -547,9 +544,9 @@ class _PorductDetailsState extends State<PorductDetails> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(20.0),
                           child: Text(
-                            'Bus Route      ',
+                            'Bus Route    ',
                             style: GoogleFonts.montserrat(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -575,9 +572,9 @@ class _PorductDetailsState extends State<PorductDetails> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(20.0),
                           child: Text(
-                            'Route No         ',
+                            'Route No      ',
                             style: GoogleFonts.montserrat(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -603,9 +600,9 @@ class _PorductDetailsState extends State<PorductDetails> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(15),
+                          padding: const EdgeInsets.all(20),
                           child: Text(
-                            'Start Time ',
+                            'Start Time',
                             style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.bold,
                               color: Colors.black,

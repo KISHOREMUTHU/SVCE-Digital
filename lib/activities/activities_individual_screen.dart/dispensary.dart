@@ -131,38 +131,36 @@ class _DispensaryState extends State<Dispensary> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                   child: Container(
-                    width: 340,
-                    height: 90,
+                    width: MediaQuery.of(context).size.width * 0.85,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
                       ],
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        SizedBox(height: 20),
                         Text(
-                          'Dr. M. Jeyamalar MD',
-                          style: TextStyle(
+                          'Dr. M. Jeyamalar M.D.',
+                          style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
                         ),
                         SizedBox(height: 10),
                         Text(
                           "Medical officer",
-                          style: TextStyle(
+                          style: GoogleFonts.montserrat(
                             fontSize: 15,
                             color: Colors.grey,
                           ),
                         ),
+                        SizedBox(height: 20)
                       ],
                     ),
                   ),
@@ -171,38 +169,36 @@ class _DispensaryState extends State<Dispensary> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                   child: Container(
-                    width: 340,
-                    height: 90,
+                    width: MediaQuery.of(context).size.width * 0.85,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
                       ],
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        SizedBox(height: 20),
                         Text(
                           'Dr. Naseem Akthar',
-                          style: TextStyle(
+                          style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
                         ),
                         SizedBox(height: 10),
                         Text(
                           " Counsellor ",
-                          style: TextStyle(
+                          style: GoogleFonts.montserrat(
                             fontSize: 15,
                             color: Colors.grey,
                           ),
                         ),
+                        SizedBox(height: 20),
                       ],
                     ),
                   ),
@@ -211,38 +207,36 @@ class _DispensaryState extends State<Dispensary> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                   child: Container(
-                    width: 340,
-                    height: 90,
+                    width: MediaQuery.of(context).size.width * 0.85,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
                       ],
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        SizedBox(height: 20),
                         Text(
                           'Ms. K. Chamundeeswari',
-                          style: TextStyle(
+                          style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
                         ),
                         SizedBox(height: 10),
                         Text(
                           "Nurse",
-                          style: TextStyle(
+                          style: GoogleFonts.montserrat(
                             fontSize: 15,
                             color: Colors.grey,
                           ),
                         ),
+                        SizedBox(height: 20)
                       ],
                     ),
                   ),
@@ -306,11 +300,8 @@ class _DispensaryState extends State<Dispensary> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
                       ],
                     ),
                     child: Column(

@@ -91,7 +91,6 @@ flutter:
     - assets/emp5.jpeg
     - assets/act.jpeg
     - assets/emp.jpeg
-    - assets/ac.jpeg
     - assets/academics.jpeg
     - assets/bus.jpeg
     - assets/canteen.jpeg
@@ -100,19 +99,20 @@ flutter:
     - assets/placement.jpeg
     - assets/sa.jpeg
     - assets/rag.jpeg
-    - assets/am.jpeg
-    - assets/ap.jpeg
-    - assets/auto.jpeg
-    - assets/biotech.jpeg
-    - assets/chem.jpeg
-    - assets/civil.jpeg
-    - assets/cs.jpeg
-    - assets/ece.jpeg
-    - assets/eee.jpeg
-    - assets/hss.jpeg
-    - assets/it.jpeg
-    - assets/mar.jpeg
-    - assets/mech.jpeg
+    - assets/maths.jpg
+    - assets/chem.jpg
+    - assets/physics.jpg
+    - assets/auto.jpg
+    - assets/civil.png
+    - assets/biotech.jpg
+    - assets/chemical.png
+    - assets/cs.png
+    - assets/ece.jpg
+    - assets/eee.jpg
+    - assets/hss.jpg
+    - assets/it.jpg
+    - assets/mech.jpg
+    - assets/marine.jpg
     - assets/pl1.jpeg
     - assets/pl2.jpeg
     - assets/pl3.jpeg

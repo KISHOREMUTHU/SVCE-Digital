@@ -440,11 +440,8 @@ class _HomeState extends State<Home> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
                       ],
                     ),
                     padding: const EdgeInsets.all(20.0),
@@ -466,11 +463,8 @@ class _HomeState extends State<Home> {
                         color: Colors.blue.shade900,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
-                            blurRadius: 1,
-                            offset: Offset(0, 2),
-                          )
+                              color: Colors.black.withAlpha(100),
+                              blurRadius: 10.0),
                         ],
                       ),
                       child: Column(
@@ -506,11 +500,8 @@ class _HomeState extends State<Home> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
                       ],
                     ),
                     padding: const EdgeInsets.all(20.0),
@@ -532,11 +523,8 @@ class _HomeState extends State<Home> {
                         color: Colors.blue.shade900,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
-                            blurRadius: 1,
-                            offset: Offset(0, 2),
-                          )
+                              color: Colors.black.withAlpha(100),
+                              blurRadius: 10.0),
                         ],
                       ),
                       child: Column(
@@ -572,11 +560,8 @@ class _HomeState extends State<Home> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey,
-                          spreadRadius: 1,
-                          blurRadius: 1,
-                          offset: Offset(0, 2),
-                        )
+                            color: Colors.black.withAlpha(100),
+                            blurRadius: 10.0),
                       ],
                     ),
                     padding: const EdgeInsets.all(20.0),
@@ -598,11 +583,8 @@ class _HomeState extends State<Home> {
                         color: Colors.blue.shade900,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 1,
-                            blurRadius: 1,
-                            offset: Offset(0, 2),
-                          )
+                              color: Colors.black.withAlpha(100),
+                              blurRadius: 10.0),
                         ],
                       ),
                       child: Column(
