@@ -854,6 +854,7 @@ class _PlacementsState extends State<Placements> {
                         child: Center(
                           child: Text(
                             'Preparation',
+                            overflow: TextOverflow.fade,
                             textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                               color: Colors.white,

@@ -159,6 +159,7 @@ class AcademicTile extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.1,
                 child: Text(
                   text,
+                  overflow: TextOverflow.fade,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
                     textStyle: TextStyle(

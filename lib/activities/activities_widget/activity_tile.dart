@@ -17,12 +17,7 @@ class ActivityTile extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            spreadRadius: 1,
-            blurRadius: 1,
-            offset: Offset(0, 2),
-          )
+          BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 10.0),
         ],
       ),
       child: ClipRRect(
@@ -53,6 +48,7 @@ class ActivityTile extends StatelessWidget {
               title: Text(
                 text,
                 textAlign: TextAlign.center,
+                overflow: TextOverflow.fade,
                 style: GoogleFonts.montserrat(
                   textStyle: TextStyle(
                     color: Colors.white,

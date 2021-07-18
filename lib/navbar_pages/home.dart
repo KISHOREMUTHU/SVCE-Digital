@@ -566,11 +566,14 @@ class _HomeState extends State<Home> {
                     ),
                     padding: const EdgeInsets.all(20.0),
                     child: Center(
-                      child: Text(
-                        'Quality Policy',
-                        style: GoogleFonts.montserrat(
-                          color: Colors.black,
-                          fontSize: 35,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        child: Text(
+                          'Quality Policy',
+                          style: GoogleFonts.montserrat(
+                            color: Colors.black,
+                            fontSize: 35,
+                          ),
                         ),
                       ),
                     ),

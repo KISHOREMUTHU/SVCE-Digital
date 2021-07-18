@@ -481,7 +481,86 @@ class MapSearch extends SearchDelegate<NavigatorData> {
 
   @override
   Widget buildResults(BuildContext context) {
-    return Center(child: Text(query));
+    final myList = query.isEmpty
+        ? loadNavigators()
+        : loadNavigators()
+        .where((p) =>
+    p.name.toLowerCase().contains(query) ||
+        p.name.startsWith(query) ||
+        p.name.toLowerCase().startsWith(query))
+        .toList();
+
+    return myList.isEmpty
+        ? Center(
+        child: Text(
+          'No Results Found...',
+          style: TextStyle(fontSize: 20, color: Colors.red),
+        ))
+        : ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        final NavigatorData listItem = myList[index];
+        return MaterialButton(
+          onPressed: () {
+            _launchURL(listItem.url);
+          },
+          child: Container(
+              margin: const EdgeInsets.symmetric(
+                  horizontal: 20, vertical: 10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withAlpha(100),
+                        blurRadius: 10.0),
+                  ]),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          SizedBox(
+                            width: 160,
+                            child: Text(
+                              listItem.name,
+                              style: GoogleFonts.montserrat(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: Container(
+                        width: 90,
+                        height: 90,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(45),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(listItem.image),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+        );
+      },
+      itemCount: myList.length,
+    );
   }
 
   @override

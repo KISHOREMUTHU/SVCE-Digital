@@ -98,8 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 boxShadow: [
                   BoxShadow(
                       color: Colors.black.withAlpha(100), blurRadius: 10.0),
-                ]
-            ),
+                ]),
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
@@ -662,8 +661,7 @@ class _CategoriesScrollerState extends State<CategoriesScroller> {
                           BoxShadow(
                               color: Colors.black.withAlpha(100),
                               blurRadius: 10.0),
-                        ]
-                    ),
+                        ]),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -912,7 +910,115 @@ class HospitalSearch extends SearchDelegate<FoodItem> {
 
   @override
   Widget buildResults(BuildContext context) {
-    return Center(child: Text(query));
+    final myList = query.isEmpty
+        ? loadFood()
+        : loadFood()
+            .where((p) =>
+                p.food.toLowerCase().startsWith(query) ||
+                p.food.toLowerCase().contains(query) ||
+                p.food.startsWith(query) ||
+                p.available.toLowerCase().startsWith(query) ||
+                p.available.startsWith(query) ||
+                p.category.toLowerCase().startsWith(query) ||
+                p.category.startsWith(query) ||
+                p.price.toLowerCase().startsWith(query) ||
+                p.timings.startsWith(query) ||
+                p.timings.toLowerCase().startsWith(query))
+            .toList();
+
+    return myList.isEmpty
+        ? Center(
+            child: Text(
+            'No Results Found...',
+            style: TextStyle(fontSize: 20, color: Colors.red),
+          ))
+        : ListView.builder(
+            itemBuilder: (BuildContext context, int index) {
+              final FoodItem listItem = myList[index];
+              return MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SingleFood(
+                              food: listItem.food,
+                              category: listItem.category,
+                              timings: listItem.timings.toString(),
+                              available: listItem.available,
+                              price: listItem.price.toString(),
+                              path: listItem.path)));
+                },
+                child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black.withAlpha(100),
+                              blurRadius: 10.0),
+                        ]),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 160,
+                                  child: Text(
+                                    listItem.food,
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  listItem.category,
+                                  style: GoogleFonts.montserrat(
+                                      fontSize: 17, color: Colors.grey),
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  "Rs. " + "${listItem.price}" + " /-",
+                                  style: GoogleFonts.montserrat(
+                                      fontSize: 17,
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 15.0),
+                            child: Container(
+                              width: 90,
+                              height: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(45),
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(listItem.path),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+              );
+            },
+            itemCount: myList.length,
+          );
   }
 
   @override
@@ -1054,7 +1160,115 @@ class BlockVSearch extends SearchDelegate<FoodItem> {
 
   @override
   Widget buildResults(BuildContext context) {
-    return Center(child: Text(query));
+    final myList = query.isEmpty
+        ? loadBlockV()
+        : loadBlockV()
+            .where((p) =>
+                p.food.toLowerCase().startsWith(query) ||
+                p.food.toLowerCase().contains(query) ||
+                p.food.startsWith(query) ||
+                p.available.toLowerCase().startsWith(query) ||
+                p.available.startsWith(query) ||
+                p.category.toLowerCase().startsWith(query) ||
+                p.category.startsWith(query) ||
+                p.price.toLowerCase().startsWith(query) ||
+                p.timings.startsWith(query) ||
+                p.timings.toLowerCase().startsWith(query))
+            .toList();
+
+    return myList.isEmpty
+        ? Center(
+            child: Text(
+            'No Results Found...',
+            style: TextStyle(fontSize: 20, color: Colors.red),
+          ))
+        : ListView.builder(
+            itemBuilder: (BuildContext context, int index) {
+              final FoodItem listItem = myList[index];
+              return MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SingleFood(
+                              food: listItem.food,
+                              category: listItem.category,
+                              timings: listItem.timings.toString(),
+                              available: listItem.available,
+                              price: listItem.price.toString(),
+                              path: listItem.path)));
+                },
+                child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black.withAlpha(100),
+                              blurRadius: 10.0),
+                        ]),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 160,
+                                  child: Text(
+                                    listItem.food,
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  listItem.category,
+                                  style: GoogleFonts.montserrat(
+                                      fontSize: 17, color: Colors.grey),
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  "Rs. " + "${listItem.price}" + " /-",
+                                  style: GoogleFonts.montserrat(
+                                      fontSize: 17,
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 15.0),
+                            child: Container(
+                              width: 90,
+                              height: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(45),
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(listItem.path),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+              );
+            },
+            itemCount: myList.length,
+          );
   }
 
   @override
@@ -1196,7 +1410,115 @@ class CCDSearch extends SearchDelegate<FoodItem> {
 
   @override
   Widget buildResults(BuildContext context) {
-    return Center(child: Text(query));
+    final myList = query.isEmpty
+        ? loadCCD()
+        : loadCCD()
+            .where((p) =>
+                p.food.toLowerCase().startsWith(query) ||
+                p.food.toLowerCase().contains(query) ||
+                p.food.startsWith(query) ||
+                p.available.toLowerCase().startsWith(query) ||
+                p.available.startsWith(query) ||
+                p.category.toLowerCase().startsWith(query) ||
+                p.category.startsWith(query) ||
+                p.price.toLowerCase().startsWith(query) ||
+                p.timings.startsWith(query) ||
+                p.timings.toLowerCase().startsWith(query))
+            .toList();
+
+    return myList.isEmpty
+        ? Center(
+            child: Text(
+            'No Results Found...',
+            style: TextStyle(fontSize: 20, color: Colors.red),
+          ))
+        : ListView.builder(
+            itemBuilder: (BuildContext context, int index) {
+              final FoodItem listItem = myList[index];
+              return MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SingleFood(
+                              food: listItem.food,
+                              category: listItem.category,
+                              timings: listItem.timings.toString(),
+                              available: listItem.available,
+                              price: listItem.price.toString(),
+                              path: listItem.path)));
+                },
+                child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black.withAlpha(100),
+                              blurRadius: 10.0),
+                        ]),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 160,
+                                  child: Text(
+                                    listItem.food,
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  listItem.category,
+                                  style: GoogleFonts.montserrat(
+                                      fontSize: 17, color: Colors.grey),
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  "Rs. " + "${listItem.price}" + " /-",
+                                  style: GoogleFonts.montserrat(
+                                      fontSize: 17,
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 15.0),
+                            child: Container(
+                              width: 90,
+                              height: 90,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(45),
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(listItem.path),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+              );
+            },
+            itemCount: myList.length,
+          );
   }
 
   @override
@@ -1376,6 +1698,7 @@ class SingleFood extends StatelessWidget {
                     child: Center(
                       child: Text(
                         food,
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                             fontSize: 32,
                             color: Colors.black,
@@ -1543,7 +1866,7 @@ class SingleFood extends StatelessWidget {
                       _launchURL('https://paytm.com/');
                     },
                     child: Container(
-                      width: 140,
+                      width: 150,
                       height: 60,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
@@ -1591,7 +1914,7 @@ class SingleFood extends StatelessWidget {
                       _launchURL('https://pay.google.com/intl/en_in/about/');
                     },
                     child: Container(
-                      width: 140,
+                      width: 150,
                       height: 60,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),

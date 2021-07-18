@@ -92,6 +92,7 @@ class _LibraryState extends State<Library> {
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
                           'Nothing is pleasanter than exploring a library.',
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
@@ -100,6 +101,7 @@ class _LibraryState extends State<Library> {
                       SizedBox(height: 10),
                       Text(
                         " - Walter Savage Landor (1775-1864)",
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                           fontSize: 15,
                           color: Colors.grey,
@@ -132,6 +134,7 @@ class _LibraryState extends State<Library> {
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
                           'Libraries store the energy that fuels the imagination. They open up windows to the world and inspire us to explore and achieve, and contribute to improving our quality of life.',
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
@@ -140,6 +143,7 @@ class _LibraryState extends State<Library> {
                       SizedBox(height: 10),
                       Text(
                         " - Sidney Sheldon (1917-2007)",
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                           fontSize: 15,
                           color: Colors.grey,
@@ -174,6 +178,7 @@ class _LibraryState extends State<Library> {
                   child: Center(
                     child: Text(
                       'About',
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.montserrat(fontSize: 30),
                     ),
                   ),
@@ -544,7 +549,7 @@ class _LibraryState extends State<Library> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.7,
+                    width: MediaQuery.of(context).size.width * 0.8,
                     child: Center(
                       child: Padding(
                         padding: const EdgeInsets.all(15.0),
@@ -553,6 +558,7 @@ class _LibraryState extends State<Library> {
                             SizedBox(height: 15),
                             Text(
                               'Make sure you are connected to our College Network , before accessing the Library Portal. ',
+                              textAlign: TextAlign.center,
                               style: GoogleFonts.montserrat(
                                 color: Colors.black,
                                 fontSize: 17,

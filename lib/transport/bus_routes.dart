@@ -416,9 +416,7 @@ class SingleBus extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
             color: Colors.white,
             boxShadow: [
-              BoxShadow(
-                  color: Colors.black.withAlpha(100),
-                  blurRadius: 10.0),
+              BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 10.0),
             ],
           ),
           child: Padding(
@@ -1086,7 +1084,41 @@ class TransportDelegate extends SearchDelegate<Bus> {
 
   @override
   Widget buildResults(BuildContext context) {
-    return Center(child: Text(query));
+    final myList = query.isEmpty
+        ? loadBus()
+        : loadBus()
+            .where((p) =>
+                p.city.toLowerCase().startsWith(query) ||
+                p.city.toLowerCase().contains(query) ||
+                p.city.startsWith(query) ||
+                p.route.toLowerCase().startsWith(query) ||
+                p.route.startsWith(query) ||
+                p.start_time.toLowerCase().startsWith(query) ||
+                p.start_time.startsWith(query) ||
+                p.start_time.contains(query) ||
+                p.via.startsWith(query) ||
+                p.via.toLowerCase().startsWith(query) ||
+                p.via.toLowerCase().contains(query))
+            .toList();
+
+    return myList.isEmpty
+        ? Center(
+            child: Text(
+            'No Results Found...',
+            style: TextStyle(fontSize: 20, color: Colors.red),
+          ))
+        : ListView.builder(
+            itemBuilder: (BuildContext context, int index) {
+              final Bus listItem = myList[index];
+              return SingleBus(
+                via: listItem.via,
+                city: listItem.city,
+                start_time: listItem.start_time,
+                route: listItem.route,
+              );
+            },
+            itemCount: myList.length,
+          );
   }
 
   @override

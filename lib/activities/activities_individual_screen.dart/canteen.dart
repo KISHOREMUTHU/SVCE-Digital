@@ -56,6 +56,7 @@ class _CanteenState extends State<Canteen> {
                             padding: const EdgeInsets.all(10.0),
                             child: Text(
                               'To a man with an empty stomach food is God',
+                              textAlign: TextAlign.center,
                               style: GoogleFonts.montserrat(
                                 fontSize: 20,
                               ),
@@ -133,6 +134,7 @@ class _CanteenState extends State<Canteen> {
                     child: Center(
                       child: Text(
                         'Canteen Committee',
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                           fontSize: 27,
                           color: Colors.blue.shade900,
@@ -161,6 +163,7 @@ class _CanteenState extends State<Canteen> {
                           SizedBox(height: 20),
                           Text(
                             'Dr S.Ganesh Vaidhyanathan',
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                               fontSize: 18,
                             ),
@@ -207,6 +210,7 @@ class _CanteenState extends State<Canteen> {
                           SizedBox(height: 20),
                           Text(
                             'Dr G.Devasakayam',
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                               fontSize: 18,
                             ),
@@ -222,6 +226,7 @@ class _CanteenState extends State<Canteen> {
                           SizedBox(height: 10),
                           Text(
                             "Officer In-charge",
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                               fontSize: 15,
                               color: Colors.grey,
@@ -253,6 +258,7 @@ class _CanteenState extends State<Canteen> {
                           SizedBox(height: 20),
                           Text(
                             'Mr M.Sethumadhavan',
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                               fontSize: 18,
                             ),
@@ -292,6 +298,7 @@ class _CanteenState extends State<Canteen> {
                         child: Center(
                           child: Text(
                             'Members And Staff',
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(fontSize: 27),
                           ),
                         ),

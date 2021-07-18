@@ -59,7 +59,7 @@ class _DispensaryState extends State<Dispensary> {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     'Health Care Facilities',
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.montserrat(
                       fontSize: 27,
                       color: Colors.blue.shade900,
@@ -148,6 +148,7 @@ class _DispensaryState extends State<Dispensary> {
                         SizedBox(height: 20),
                         Text(
                           'Dr. M. Jeyamalar M.D.',
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
@@ -155,6 +156,7 @@ class _DispensaryState extends State<Dispensary> {
                         SizedBox(height: 10),
                         Text(
                           "Medical officer",
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 15,
                             color: Colors.grey,
@@ -186,6 +188,7 @@ class _DispensaryState extends State<Dispensary> {
                         SizedBox(height: 20),
                         Text(
                           'Dr. Naseem Akthar',
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
@@ -193,6 +196,7 @@ class _DispensaryState extends State<Dispensary> {
                         SizedBox(height: 10),
                         Text(
                           " Counsellor ",
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 15,
                             color: Colors.grey,
@@ -224,6 +228,7 @@ class _DispensaryState extends State<Dispensary> {
                         SizedBox(height: 20),
                         Text(
                           'Ms. K. Chamundeeswari',
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
@@ -231,6 +236,8 @@ class _DispensaryState extends State<Dispensary> {
                         SizedBox(height: 10),
                         Text(
                           "Nurse",
+                          textAlign: TextAlign.center,
+
                           style: GoogleFonts.montserrat(
                             fontSize: 15,
                             color: Colors.grey,
@@ -262,6 +269,7 @@ class _DispensaryState extends State<Dispensary> {
                         SizedBox(height: 20),
                         Text(
                           'Mr. V. Mohan',
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 18,
                           ),
@@ -269,6 +277,7 @@ class _DispensaryState extends State<Dispensary> {
                         SizedBox(height: 10),
                         Text(
                           "Lab technician",
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             fontSize: 15,
                             color: Colors.grey,
@@ -291,6 +300,7 @@ class _DispensaryState extends State<Dispensary> {
                     ),
                   ),
                 ),
+                SizedBox(height: 25),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                   child: Container(

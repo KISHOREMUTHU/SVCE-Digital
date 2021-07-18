@@ -16,7 +16,7 @@ class _DeveloperTeamState extends State<DeveloperTeam> {
             image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
-                'assets/dev.png',
+                'assets/devs.gif',
               ),
             ),
           ),

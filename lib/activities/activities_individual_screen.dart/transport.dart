@@ -79,7 +79,8 @@ class _TransportState extends State<Transport> {
                             borderRadius: BorderRadius.circular(20)),
                         child: Center(
                           child: Text(
-                            ' Bus Routes ',
+                            'Bus Routes',
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -122,6 +123,7 @@ class _TransportState extends State<Transport> {
                         child: Center(
                           child: Text(
                             'Bus Schedule',
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.montserrat(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
