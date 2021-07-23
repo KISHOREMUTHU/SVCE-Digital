@@ -1895,7 +1895,7 @@ class SingleFood extends StatelessWidget {
                                   image: AssetImage('assets/paytm.png'),
                                 ),
                               ),
-                              //child : Image.asset('assets/paytm.png'),
+
                             ),
                           ),
                           Text(

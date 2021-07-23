@@ -41,10 +41,11 @@ class CustomCard extends StatelessWidget {
             ListTile(
               title: Row(
                 children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.7,
+                  Expanded(
                     child: Text(
                       snapshot.docs[index]['title'],
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
                       style: GoogleFonts.montserrat(
                         fontSize: 26,
                       ),

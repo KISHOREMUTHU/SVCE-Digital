@@ -570,6 +570,7 @@ class _HomeState extends State<Home> {
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: Text(
                           'Quality Policy',
+                          textAlign : TextAlign.center,
                           style: GoogleFonts.montserrat(
                             color: Colors.black,
                             fontSize: 35,
