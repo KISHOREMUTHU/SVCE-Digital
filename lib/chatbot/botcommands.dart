@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 var dt = DateTime.now();
 
 class Queries {
@@ -8,7 +10,7 @@ List responses = [
   "Hey There, I am Veronica",
   "You're welcome 😊",
   getDate(),
-  getTime()
+  gettime()
 ];
 var queries = [Queries(), Queries(), Queries(), Queries()];
 
@@ -58,6 +60,28 @@ String getDate() {
   return '${months[dt.month]} ${dt.day}, ${dt.year}';
 }
 
-String getTime() {
-  return '${dt.hour}:${dt.minute}:${dt.second}';
+String gettime() {
+  TimeOfDay _timeOfDay = TimeOfDay.now();
+  String period = _timeOfDay.period == DayPeriod.am ? "AM" : "PM";
+  String time = '';
+  var hour = _timeOfDay.hourOfPeriod;
+  var minute = _timeOfDay.minute;
+
+  if (period == 'PM') {
+    if (hour == 0)
+      hour = 12;
+    else if (hour > 12) hour -= 12;
+  } else if (period == 'AM') {
+    if (hour == 0) hour = 12;
+  }
+
+  if (hour < 10)
+    time += '0' + hour.toString();
+  else
+    time += hour.toString();
+
+  time += ':';
+  if (minute < 10) time += '0' + minute.toString();
+  print(time);
+  return time + minute.toString() + "  " + period;
 }

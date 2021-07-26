@@ -1,11 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-List welcomeMsg() {
-  final User user = FirebaseAuth.instance.currentUser;
-  String wlcum = "Hi ${user.displayName}, I am Veronica :)";
-
-  String cmnd = "Type !commands for basic commands";
-  String commands = """
+String commands = """
 !lost itemName,itemDescription,place: Used when user lost one of his\/her belongings.
 !found itemName,itemDescription,place: Used to intimate the info regarding any lost object.
 !cleanliness place,cleanliness_Status: Used to intimate the tidiness report of a particular block\/classroom.
@@ -15,5 +10,11 @@ List welcomeMsg() {
 !time: Returns the time.
 """;
 
-  return [wlcum, cmnd, commands];
+List welcomeMsg() {
+  final User user = FirebaseAuth.instance.currentUser;
+  String wlcum = "Hi ${user.displayName}, I am Veronica :)";
+
+  String cmnd = "Type !commands for basic commands";
+
+  return [wlcum, cmnd];
 }

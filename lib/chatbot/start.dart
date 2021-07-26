@@ -39,12 +39,7 @@ class _MyChatState extends State<MyChat> {
         "message": value[1],
       });
     });
-    setState(() {
-      messsages.insert(0, {
-        "data": 0,
-        "message": value[2],
-      });
-    });
+
     addCoordinators();
     addcleanlinessCoordinators();
     super.initState();
@@ -83,6 +78,13 @@ class _MyChatState extends State<MyChat> {
         });
         lostitems.removeLast();
       }
+    } else if (query.startsWith('!commands') || query.contains('command')) {
+      setState(() {
+        messsages.insert(0, {
+          "data": 0,
+          "message": commands,
+        });
+      });
     } else if (query.startsWith("!found") && query.split(',').length == 3) {
       List foundData = query.substring(7).split(',');
       var item = Item(foundData[0], foundData[1], foundData[2]);
@@ -161,7 +163,7 @@ class _MyChatState extends State<MyChat> {
           });
         });
       }
-    } else if (query == "!map") {
+    } else if (query == "!map" || query.contains('map')) {
       Navigator.push(
           context,
           MaterialPageRoute(
@@ -172,7 +174,7 @@ class _MyChatState extends State<MyChat> {
                       javascriptMode: JavascriptMode.unrestricted,
                     ),
                   )));
-    } else if (query == "!admission") {
+    } else if (query == "!admission" || query.contains('admission')) {
       Navigator.push(
           context,
           MaterialPageRoute(
@@ -184,7 +186,7 @@ class _MyChatState extends State<MyChat> {
                       javascriptMode: JavascriptMode.unrestricted,
                     ),
                   )));
-    } else if (query == "!events") {
+    } else if (query == "!events" || query.contains('events')) {
       Navigator.push(
           context,
           MaterialPageRoute(
