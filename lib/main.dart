@@ -19,10 +19,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SVCE Mobile',
-      darkTheme: ThemeData(
-        primarySwatch: Colors.orange,
-        accentColor: Colors.amber,
-      ),
       home: HomePage(),
     );
   }

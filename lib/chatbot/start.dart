@@ -1,11 +1,11 @@
 import 'package:bubble/bubble.dart';
-import 'package:ease_the_error/chatbot/classes.dart';
 import 'package:ease_the_error/chatbot/cleanliness.dart';
 import 'package:ease_the_error/chatbot/lost_found.dart';
 import 'package:ease_the_error/chatbot/welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'botcommands.dart';
@@ -47,156 +47,24 @@ class _MyChatState extends State<MyChat> {
 
   void response(query) {
     addQueries();
-    var msg, i, ind;
-    if (query.startsWith("!lost") && query.split(',').length == 3) {
-      List lostData = query.substring(6).split(',');
-      lostitems.add(Item(lostData[0], lostData[1], lostData[2]));
-      for (i = 0; i < coordinators.length; ++i) {
-        if (coordinators[i].place.toString().toLowerCase() ==
-            lostData[2].toString().toLowerCase()) {
-          ind = i;
-          break;
-        }
-      }
-      if (!checkFounditems(lostitems.last)) {
-        msg = "Details Noted. Please convey this to";
-        setState(() {
-          messsages.insert(0, {
-            "data": 0,
-            "message":
-                "$msg Co-ordinator: ${coordinators[ind].name},Phone: ${coordinators[ind].phone_number},Place: ${coordinators[ind].place}"
-          });
-        });
-      } else {
-        msg = "An item similar to yours is found. Contact,";
-        setState(() {
-          messsages.insert(0, {
-            "data": 0,
-            "message":
-                "$msg Co-ordinator: ${coordinators[i].name},Phone: ${coordinators[i].phone_number}, Place: ${coordinators[i].place}, for more details."
-          });
-        });
-        lostitems.removeLast();
-      }
-    } else if (query.startsWith('!commands') || query.contains('command')) {
+
+    if (query.startsWith('!commands') || query.contains('command')) {
       setState(() {
         messsages.insert(0, {
           "data": 0,
           "message": commands,
         });
       });
-    } else if (query.startsWith("!found") && query.split(',').length == 3) {
-      List foundData = query.substring(7).split(',');
-      var item = Item(foundData[0], foundData[1], foundData[2]);
-      for (i = 0; i < coordinators.length; ++i) {
-        if (coordinators[i].place == foundData[2]) {
-          ind = i;
-          break;
-        }
-      }
-      addFounditem(item);
-      msg = "Details noted. Please contact";
-      setState(() {
-        messsages.insert(0, {
-          "data": 0,
-          "message":
-              "$msg Co-ordinator: ${coordinators[i].name},Phone: ${coordinators[i].phone_number}, Place: ${coordinators[i].place},and convey this."
-        });
-      });
-    } else if (query.startsWith("!cleanliness") &&
-        query.split(',').length == 2) {
-      List cleanData = query.substring(13).split(',');
-      for (i = 0; i < cleanliness_coordinators.length; ++i) {
-        if (cleanliness_coordinators[i].place.toString().toLowerCase() ==
-            cleanData[0].toString().toLowerCase()) {
-          ind = i;
-          break;
-        }
-      }
-      addSanitationReport(cleanData);
-      msg = "Sanitation Report Noted. Please contact";
-      setState(() {
-        messsages.insert(0, {
-          "data": 0,
-          "message":
-              "$msg Co-ordinator: ${cleanliness_coordinators[i].name},Phone: ${cleanliness_coordinators[i].phone_number}, Location: ${cleanliness_coordinators[i].place},and convey this."
-        });
-      });
-    } else if (query.startsWith("!item_returned") &&
-        query.split(',').length == 3) {
-      List retData = query.substring(15).split(',');
-      var item = Item(retData[0], retData[1], retData[2]);
-      if (updateFounditem(item)) {
-        setState(() {
-          messsages.insert(0, {"data": 0, "message": "Status Updated !"});
-        });
-      } else {
-        setState(() {
-          messsages.insert(0, {
-            "data": 0,
-            "message": "The Given item is not found in the Founditems list !!"
-          });
-        });
-      }
-    } else if (query == "!lost_items") {
-      var items = viewLostitems(), v;
-      for (var i = 0; i < items.length; ++i) {
-        v = items[i].split(",");
-
-        setState(() {
-          messsages.insert(0, {
-            "data": 0,
-            "message":
-                "ITEM ID: ${i + 1}., ITEM NAME: ${v[0]}, ITEM DESCRIPTION: ${v[1]}, PLACE WHERE IT IS LOST: ${v[2]}"
-          });
-        });
-      }
-    } else if (query == "!found_items") {
-      var items = viewFounditems(), v;
-      for (var i = 0; i < items.length; ++i) {
-        v = items[i].split(",");
-        setState(() {
-          messsages.insert(0, {
-            "data": 0,
-            "message":
-                "ITEM ID: ${i + 1}., ITEM NAME: ${v[0]}, ITEM DESCRIPTION: ${v[1]}, PLACE WHERE IT IS FOUND: ${v[2]}"
-          });
-        });
-      }
     } else if (query == "!map" || query.contains('map')) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => SizedBox.fromSize(
-                    size: Size(100, 1000),
-                    child: WebView(
-                      initialUrl: "https://goo.gl/maps/JTt8tjqgtK4q6dAH9",
-                      javascriptMode: JavascriptMode.unrestricted,
-                    ),
-                  )));
+      _launchURL("https://goo.gl/maps/JTt8tjqgtK4q6dAH9");
     } else if (query == "!admission" || query.contains('admission')) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => SizedBox.fromSize(
-                    size: Size(100, 1000),
-                    child: WebView(
-                      initialUrl:
-                          "https://www.svce.ac.in/admission/programs-offered/",
-                      javascriptMode: JavascriptMode.unrestricted,
-                    ),
-                  )));
-    } else if (query == "!events" || query.contains('events')) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => SizedBox.fromSize(
-                    size: Size(100, 1000),
-                    child: WebView(
-                      initialUrl: "https://www.svce.ac.in/flashnews/",
-                      javascriptMode: JavascriptMode.unrestricted,
-                    ),
-                  )));
+      _launchURL("https://www.svce.ac.in/admission/programs-offered/");
+    } else if (query == "!events" ||
+        query.contains('events') ||
+        query.contains('news')) {
+
+      _launchURL( "https://www.svce.ac.in/flashnews/");
+
     } else {
       String response = getResopnse(query);
       setState(() {
@@ -405,5 +273,13 @@ class _MyChatState extends State<MyChat> {
         ],
       ),
     );
+  }
+  _launchURL(String place) async {
+    var url = place;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

@@ -179,11 +179,11 @@ class _HomeState extends State<Home> {
                   children: [
                     InkWell(
                       onTap: () {
-                        _launchURL('https://www.svce.ac.in/');
+                        _launchURL('https://www.svce.ac.in/flashnews/');
                       },
                       child: ListTile(
                         title: Text(
-                          'Events',
+                          'Flash Events',
                           style: GoogleFonts.montserrat(
                             color: Colors.white,
                           ),
@@ -260,20 +260,8 @@ class _HomeState extends State<Home> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SafeArea(
-                                child: SizedBox.fromSize(
-                                    size: Size(100, 1000),
-                                    child: WebView(
-                                      initialUrl:
-                                          'https://www.svce.ac.in/contact-us/',
-                                      javascriptMode:
-                                          JavascriptMode.unrestricted,
-                                    )),
-                              ),
-                            ));
+
+                        _launchURL('https://www.svce.ac.in/flashnews/');
                       },
                       child: ListTile(
                         title: Text(
@@ -415,7 +403,7 @@ class _HomeState extends State<Home> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage('assets/home_bg.png'),
+              image: AssetImage("assets/activites_bg.png"),
             ),
           ),
           child: SingleChildScrollView(
@@ -570,7 +558,7 @@ class _HomeState extends State<Home> {
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: Text(
                           'Quality Policy',
-                          textAlign : TextAlign.center,
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                             color: Colors.black,
                             fontSize: 35,

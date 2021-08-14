@@ -81,7 +81,11 @@ String gettime() {
     time += hour.toString();
 
   time += ':';
-  if (minute < 10) time += '0' + minute.toString();
-  print(time);
-  return time + minute.toString() + "  " + period;
+  String minites = "";
+  if (minute < 10)
+    minites = "0" + minute.toString();
+  else
+    minites = minute.toString();
+
+  return time + minites.toString() + "  " + period;
 }
