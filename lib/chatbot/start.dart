@@ -6,7 +6,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 import 'botcommands.dart';
 
@@ -62,9 +61,7 @@ class _MyChatState extends State<MyChat> {
     } else if (query == "!events" ||
         query.contains('events') ||
         query.contains('news')) {
-
-      _launchURL( "https://www.svce.ac.in/flashnews/");
-
+      _launchURL("https://www.svce.ac.in/flashnews/");
     } else {
       String response = getResopnse(query);
       setState(() {
@@ -88,6 +85,7 @@ class _MyChatState extends State<MyChat> {
                   height: 37,
                   decoration: BoxDecoration(
                     color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
                       image: AssetImage('assets/bot.jpeg'),
                     ),
@@ -96,10 +94,10 @@ class _MyChatState extends State<MyChat> {
               ),
               Text(
                 "Ask Veronica",
-                style: TextStyle(
+                style:GoogleFonts.montserrat(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue[900],
+                  color: Theme.of(context).scaffoldBackgroundColor,
                 ),
               ),
               Icon(
@@ -109,14 +107,14 @@ class _MyChatState extends State<MyChat> {
               ),
             ],
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.blue.shade900,
         ),
         body: Container(
           child: Container(
             constraints: BoxConstraints.expand(),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/activites_bg.png'),
+                image: AssetImage("assets/activites_bg.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -274,6 +272,7 @@ class _MyChatState extends State<MyChat> {
       ),
     );
   }
+
   _launchURL(String place) async {
     var url = place;
     if (await canLaunch(url)) {

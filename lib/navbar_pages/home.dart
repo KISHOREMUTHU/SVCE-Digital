@@ -10,7 +10,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -107,7 +106,7 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.blue.shade900,
           iconTheme: IconThemeData(color: Colors.white),
           title: Text(
-            'SVCE Mobile',
+            'SVCE Digital',
             style: GoogleFonts.montserrat(
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -260,8 +259,7 @@ class _HomeState extends State<Home> {
                     ),
                     InkWell(
                       onTap: () {
-
-                        _launchURL('https://www.svce.ac.in/flashnews/');
+                        _launchURL('https://www.svce.ac.in/contact-us/');
                       },
                       child: ListTile(
                         title: Text(
@@ -285,35 +283,7 @@ class _HomeState extends State<Home> {
                         thickness: 1,
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DeveloperTeam()));
-                      },
-                      child: ListTile(
-                        title: Text(
-                          'Developer Info',
-                          style: GoogleFonts.montserrat(
-                            color: Colors.white,
-                          ),
-                        ),
-                        leading: Icon(
-                          Icons.people_alt,
-                          color: Colors.white,
-                        ),
-                        trailing: Icon(Icons.arrow_right,
-                            color: Colors.white, size: 32),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Divider(
-                        color: Colors.white,
-                        thickness: 1,
-                      ),
-                    ),
+
                     InkWell(
                       onTap: () {
                         final provider = Provider.of<GoogleSignInProvider>(

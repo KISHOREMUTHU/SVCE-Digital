@@ -1,3 +1,4 @@
+import 'package:ease_the_error/digital_learning/ece/ece_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -86,10 +87,85 @@ class AcademicProvider {
   }
 }
 
+class DigitalProvider {
+  static final List<AcademicItem> _activitiesList = [
+    AcademicItem(
+        text: 'Automobile',
+        assetImage: 'assets/auto.jpg',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'Biotechnology',
+        assetImage: 'assets/biotech.jpg',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'Chemical',
+        assetImage: 'assets/chemical.png',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'Civil',
+        assetImage: 'assets/civil.png',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'C S E',
+        assetImage: 'assets/cs.png',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'E E E',
+        assetImage: 'assets/eee.jpg',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'E C E',
+        assetImage: 'assets/ece.jpg',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'I T',
+        assetImage: 'assets/it.jpg',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'Mechanical',
+        assetImage: 'assets/mech.jpg',
+        materialRoute: ECEPage()),
+    AcademicItem(
+        text: 'Marine',
+        assetImage: 'assets/marine.jpg',
+        materialRoute: ECEPage()),
+  ];
+
+  List<AcademicItem> get activitiesList {
+    return [..._activitiesList];
+  }
+}
+
 class AcademicGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final activitiesList = AcademicProvider().activitiesList;
+
+    return GridView.builder(
+      physics: ScrollPhysics(),
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
+      padding: const EdgeInsets.all(10),
+      itemCount: activitiesList.length,
+      itemBuilder: (ctx, index) => AcademicTile(
+        text: activitiesList[index].text,
+        imageAsset: activitiesList[index].assetImage,
+        materialRoute: activitiesList[index].materialRoute,
+      ),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 3 / 2.5,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
+      ),
+    );
+  }
+}
+
+class DigitalGrid extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final activitiesList = DigitalProvider().activitiesList;
 
     return GridView.builder(
       physics: ScrollPhysics(),

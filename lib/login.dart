@@ -6,7 +6,7 @@ import 'package:ease_the_error/navbar_pages/navigate.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'chatbot/start.dart';
+import 'digital_learning/digital_learning_home.dart';
 
 class LoginWidget extends StatefulWidget {
   @override
@@ -26,8 +26,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     Home(),
     Activities(),
     NavigationRoutes(),
-    Anime(),
-    MyChat(),
+    DigitalLearning(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -69,21 +68,11 @@ class _LoginWidgetState extends State<LoginWidget> {
             activeColor: Colors.blue.shade900,
             inactiveColor: Colors.white,
           ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.brunch_dining),
-            title: Text(
-              'Foods',
-              style: GoogleFonts.montserrat(
-                fontSize: 15,
-              ),
-            ),
-            activeColor: Colors.blue.shade900,
-            inactiveColor: Colors.white,
-          ),
+
           BottomNavyBarItem(
             icon: Icon(Icons.bolt),
             title: Text(
-              'ChatBot',
+              'Learning',
               style: GoogleFonts.montserrat(
                 fontSize: 15,
               ),
